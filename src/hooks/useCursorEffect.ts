@@ -1,13 +1,7 @@
 import { useEffect, useRef } from 'react';
 
-interface CursorPosition {
-    x: number;
-    y: number;
-}
-
 export const useCursorEffect = (magneticStrength: number = 0.3) => {
     const elementRef = useRef<HTMLDivElement>(null);
-    const cursorPos = useRef<CursorPosition>({ x: 0, y: 0 });
 
     useEffect(() => {
         const element = elementRef.current;

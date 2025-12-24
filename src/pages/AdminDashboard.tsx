@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Edit2, Trash2, Eye, EyeOff, LogOut, Users, Briefcase, Image as ImageIcon } from 'lucide-react';
+import { Plus, Edit2, Trash2, LogOut, Users, Briefcase, Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface Job {

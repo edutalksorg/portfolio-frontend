@@ -70,7 +70,7 @@ const TechStack: React.FC = () => {
                         <StaggerContainer staggerDelay={0.05} className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-6">
                             {technologies
                                 .filter(tech => tech.category === category)
-                                .map((tech, index) => (
+                                .map((tech) => (
                                     <StaggerItem key={tech.name}>
                                         <motion.div
                                             whileHover={{ scale: 1.1, y: -5 }}
