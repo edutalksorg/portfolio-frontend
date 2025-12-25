@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top - 0 left - 0 w - full z - 50 transition - all duration - 300 ${isScrolled
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
                 ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md py-3 shadow-lg border-b border-gray-200 dark:border-gray-800'
                 : 'bg-transparent py-5'
                 } `}
@@ -58,7 +58,7 @@ const Navbar: React.FC = () => {
                         <div key={link.path} className="relative">
                             <Link
                                 to={link.path}
-                                className={`text - sm font - bold transition - colors ${location.pathname === link.path
+                                className={`text-sm font-bold transition-colors ${location.pathname === link.path
                                     ? 'text-primary'
                                     : 'text-gray-800 dark:text-gray-300 hover:text-primary'
                                     } `}
@@ -111,7 +111,7 @@ const Navbar: React.FC = () => {
                                     <Link
                                         to={link.path}
                                         onClick={() => setIsMobileMenuOpen(false)}
-                                        className={`text - 3xl font - black ${location.pathname === link.path
+                                        className={`text-3xl font-black ${location.pathname === link.path
                                             ? 'text-primary'
                                             : 'text-gray-800 dark:text-white'
                                             } `}
@@ -129,3 +129,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

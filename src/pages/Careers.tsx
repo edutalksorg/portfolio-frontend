@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Heart, TrendingUp, Users, Zap, ArrowRight, Briefcase, MapPin, Loader2 } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem, Magnetic } from '../components/animations';
 import { FloatingOrbs } from '../components/animations/ParticleField';
+import api from '../utils/api';
 
 interface Job {
     id: number;
@@ -23,8 +24,8 @@ const Careers: React.FC = () => {
 
     const fetchJobs = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/jobs');
-            const data = await response.json();
+            const response = await api.get('/jobs');
+            const data = response.data;
 
             if (data.success) {
                 setJobs(data.jobs);

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { LogIn, Mail, Lock, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import api from '../utils/api';
 
 const AdminLogin: React.FC = () => {
     const navigate = useNavigate();
@@ -18,17 +19,10 @@ const AdminLogin: React.FC = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/admin/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            const response = await api.post('/admin/login', formData);
+            const data = response.data;
 
-            const data = await response.json();
-
-            if (response.ok && data.success) {
+            if (data.success) {
                 // Store token in localStorage
                 localStorage.setItem('adminToken', data.token);
                 localStorage.setItem('adminData', JSON.stringify(data.admin));
@@ -39,10 +33,10 @@ const AdminLogin: React.FC = () => {
                 setStatus('error');
                 setErrorMessage(data.message || 'Login failed. Please try again.');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Login error:', error);
             setStatus('error');
-            setErrorMessage('Network error. Please try again later.');
+            setErrorMessage(error.response?.data?.message || 'Network error. Please try again later.');
         }
     };
 

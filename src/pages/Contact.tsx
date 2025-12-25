@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import { SlideIn, StaggerContainer, StaggerItem, Magnetic } from '../components/animations';
 import { FloatingOrbs } from '../components/animations/ParticleField';
+import api from '../utils/api';
 
 const Contact: React.FC = () => {
     const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -38,27 +39,20 @@ const Contact: React.FC = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+            const response = await api.post('/contact', formData);
+            const data = response.data;
 
-            const data = await response.json();
-
-            if (response.ok && data.success) {
+            if (data.success) {
                 setFormState('success');
                 setFormData({ name: '', email: '', phone: '', message: '' });
             } else {
                 setFormState('error');
                 setErrorMessage(data.message || 'Failed to send message. Please try again.');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Error submitting form:', error);
             setFormState('error');
-            setErrorMessage('Network error. Please check your connection and try again.');
+            setErrorMessage(error.response?.data?.message || 'Network error. Please check your connection and try again.');
         }
     };
 

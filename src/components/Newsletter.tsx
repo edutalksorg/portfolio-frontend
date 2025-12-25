@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CheckCircle2, AlertCircle } from 'lucide-react';
+import api from '../utils/api';
 
 const Newsletter: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -13,17 +14,10 @@ const Newsletter: React.FC = () => {
         setMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/newsletter', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email }),
-            });
+            const response = await api.post('/newsletter', { email });
+            const data = response.data;
 
-            const data = await response.json();
-
-            if (response.ok && data.success) {
+            if (data.success) {
                 setStatus('success');
                 setMessage('Thank you for subscribing! Check your email for confirmation.');
                 setEmail('');
@@ -31,10 +25,10 @@ const Newsletter: React.FC = () => {
                 setStatus('error');
                 setMessage(data.message || 'Failed to subscribe. Please try again.');
             }
-        } catch (error) {
+        } catch (error: any) {
             console.error('Newsletter subscription error:', error);
             setStatus('error');
-            setMessage('Network error. Please try again later.');
+            setMessage(error.response?.data?.message || 'Network error. Please try again later.');
         }
 
         // Reset status after 5 seconds
@@ -90,8 +84,8 @@ const Newsletter: React.FC = () => {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     className={`mt-4 p-4 rounded-2xl flex items-center gap-3 ${status === 'success'
-                                            ? 'bg-green-500/20 border border-green-500/30'
-                                            : 'bg-red-500/20 border border-red-500/30'
+                                        ? 'bg-green-500/20 border border-green-500/30'
+                                        : 'bg-red-500/20 border border-red-500/30'
                                         }`}
                                 >
                                     {status === 'success' ? (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Edit2, Trash2, LogOut, Users, Briefcase, Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import api from '../utils/api';
 
 interface Job {
     id: number;
@@ -62,10 +63,10 @@ const AdminDashboard: React.FC = () => {
     const fetchJobs = async () => {
         try {
             const token = localStorage.getItem('adminToken');
-            const response = await fetch('http://localhost:5000/api/jobs/admin/all', {
+            const response = await api.get('/jobs/admin/all', {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
-            const data = await response.json();
+            const data = response.data;
             if (data.success) setJobs(data.jobs);
         } catch (error) {
             console.error('Fetch jobs error:', error);
@@ -74,8 +75,8 @@ const AdminDashboard: React.FC = () => {
 
     const fetchTeam = async () => {
         try {
-            const response = await fetch('http://localhost:5000/api/team');
-            const data = await response.json();
+            const response = await api.get('/team');
+            const data = response.data;
             if (data.success) setTeam(data.data);
         } catch (error) {
             console.error('Fetch team error:', error);
@@ -86,14 +87,15 @@ const AdminDashboard: React.FC = () => {
         e.preventDefault();
         const token = localStorage.getItem('adminToken');
         try {
-            const url = editingJob ? `http://localhost:5000/api/jobs/${editingJob.id}` : 'http://localhost:5000/api/jobs';
-            const method = editingJob ? 'PUT' : 'POST';
-            const response = await fetch(url, {
-                method,
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-                body: JSON.stringify(jobFormData)
+            const url = editingJob ? `/jobs/${editingJob.id}` : '/jobs';
+            const method = editingJob ? 'put' : 'post';
+
+            // @ts-ignore - dynamic method call
+            const response = await api[method](url, jobFormData, {
+                headers: { 'Authorization': `Bearer ${token}` }
             });
-            const data = await response.json();
+
+            const data = response.data;
             if (data.success) {
                 fetchJobs();
                 setShowForm(false);
@@ -109,14 +111,15 @@ const AdminDashboard: React.FC = () => {
         e.preventDefault();
         const token = localStorage.getItem('adminToken');
         try {
-            const url = editingMember ? `http://localhost:5000/api/team/${editingMember.id}` : 'http://localhost:5000/api/team';
-            const method = editingMember ? 'PUT' : 'POST';
-            const response = await fetch(url, {
-                method,
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-                body: JSON.stringify(memberFormData)
+            const url = editingMember ? `/team/${editingMember.id}` : '/team';
+            const method = editingMember ? 'put' : 'post';
+
+            // @ts-ignore - dynamic method call
+            const response = await api[method](url, memberFormData, {
+                headers: { 'Authorization': `Bearer ${token}` }
             });
-            const data = await response.json();
+
+            const data = response.data;
             if (data.success) {
                 fetchTeam();
                 setShowForm(false);
@@ -132,11 +135,10 @@ const AdminDashboard: React.FC = () => {
         if (!confirm('Are you sure you want to remove this team member?')) return;
         const token = localStorage.getItem('adminToken');
         try {
-            const response = await fetch(`http://localhost:5000/api/team/${id}`, {
-                method: 'DELETE',
+            const response = await api.delete(`/team/${id}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
-            const data = await response.json();
+            const data = response.data;
             if (data.success) fetchTeam();
         } catch (error) {
             console.error('Delete member error:', error);
