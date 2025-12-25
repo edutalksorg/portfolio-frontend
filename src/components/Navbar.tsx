@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useTheme } from '../context/ThemeContext';
+
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoLight from '../assets/edutalks-logo-light.svg';
@@ -9,17 +9,10 @@ import { Magnetic, StaggerContainer, StaggerItem } from './animations';
 
 const Navbar: React.FC = () => {
     // const { theme } = useTheme(); // theme is no longer needed since navbar is always white
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+
 
     const navLinks = [
         { name: 'Home', path: '/' },
