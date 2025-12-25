@@ -98,7 +98,7 @@ const About: React.FC = () => {
                             >
                                 Our Story
                             </motion.span>
-                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight">
+                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight dark:text-white">
                                 Where{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -134,11 +134,11 @@ const About: React.FC = () => {
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent" />
                                 <div className="flex items-center justify-center h-full relative">
                                     <motion.span
-                                        className="text-primary text-9xl font-black opacity-10"
+                                        className="text-primary text-6xl font-black opacity-10"
                                         animate={{ rotate: [0, 5, -5, 0] }}
                                         transition={{ duration: 8, repeat: Infinity }}
                                     >
-                                        EDU
+                                        EDU TALKS
                                     </motion.span>
                                 </div>
                                 <Floating duration={4} distance={15} className="absolute top-16 left-16">
@@ -189,7 +189,7 @@ const About: React.FC = () => {
                                 <div className="mb-6 p-4 bg-primary/10 text-primary rounded-2xl inline-block">
                                     <Target size={32} />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4">Our Mission</h3>
+                                <h3 className="text-3xl font-black mb-4 dark:text-white">Our Mission</h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                                     To democratize quality education and career opportunities through interactive learning and expert-led mentorship programs. We believe every individual deserves access to world-class education regardless of their background.
                                 </p>
@@ -200,7 +200,7 @@ const About: React.FC = () => {
                                 <div className="mb-6 p-4 bg-primary/10 text-primary rounded-2xl inline-block">
                                     <Eye size={32} />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4">Our Vision</h3>
+                                <h3 className="text-3xl font-black mb-4 dark:text-white">Our Vision</h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
                                     To become the world's most trusted EdTech platform for practical skill development and professional growth. We envision a future where education truly prepares individuals for real-world challenges.
                                 </p>
@@ -214,7 +214,7 @@ const About: React.FC = () => {
             <section className="py-24 bg-gray-50 dark:bg-gray-800">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-black mb-4">
+                        <h2 className="text-3xl md:text-5xl font-black mb-4 dark:text-white">
                             Meet Our <span className="text-primary italic">Team</span>
                         </h2>
                         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">

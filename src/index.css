@@ -6,27 +6,27 @@
   /* ===== ULTRA-ATTRACTIVE COLOR SYSTEM ===== */
 
   /* Light Mode Colors */
-  --color-light-bg: #F8F9FF;
-  /* Soft Lavender White */
-  --color-light-primary: #00D9FF;
-  /* Neon Cyan */
+  --color-light-bg: #FFFFFF;
+  /* Pure White */
+  --color-light-primary: #DC2626;
+  /* Vibrant Red */
   --color-light-secondary: #1A1A2E;
   /* Deep Navy */
-  --color-light-accent: #FF006E;
-  /* Hot Pink/Magenta */
+  --color-light-accent: #EF4444;
+  /* Bright Red */
   --color-light-card: #FFFFFF;
   --color-light-text-primary: #0A0A0F;
   /* Deep Black */
-  --color-light-text-muted: #5A5A6E;
-  /* Cool Slate */
-  --color-light-border: #E0E7FF;
-  /* Soft Lavender Border */
-  --color-light-success: #00F5A0;
-  /* Neon Green */
-  --color-light-warning: #FFB800;
-  /* Bright Gold */
-  --color-light-error: #FF3366;
-  /* Bright Red */
+  --color-light-text-muted: #6B7280;
+  /* Gray */
+  --color-light-border: #E5E7EB;
+  /* Light Gray Border */
+  --color-light-success: #10B981;
+  /* Green */
+  --color-light-warning: #F59E0B;
+  /* Amber */
+  --color-light-error: #DC2626;
+  /* Red */
 
   /* Dark Mode Colors */
   --color-dark-bg: #0F0F23;
@@ -77,10 +77,10 @@
   --perspective-xl: 2000px;
 
   /* Neon Glow Effects */
-  --neon-cyan: 0 0 5px #00D9FF, 0 0 10px #00D9FF, 0 0 20px #00D9FF, 0 0 40px #00D9FF;
-  --neon-pink: 0 0 5px #FF006E, 0 0 10px #FF006E, 0 0 20px #FF006E, 0 0 40px #FF006E;
-  --neon-cyan-strong: 0 0 10px #00D9FF, 0 0 20px #00D9FF, 0 0 40px #00D9FF, 0 0 80px #00D9FF, 0 0 120px #00D9FF;
-  --neon-pink-strong: 0 0 10px #FF006E, 0 0 20px #FF006E, 0 0 40px #FF006E, 0 0 80px #FF006E, 0 0 120px #FF006E;
+  --neon-red: 0 0 5px #DC2626, 0 0 10px #DC2626, 0 0 20px #DC2626, 0 0 40px #DC2626;
+  --neon-pink: 0 0 5px #EF4444, 0 0 10px #EF4444, 0 0 20px #EF4444, 0 0 40px #EF4444;
+  --neon-red-strong: 0 0 10px #DC2626, 0 0 20px #DC2626, 0 0 40px #DC2626, 0 0 80px #DC2626, 0 0 120px #DC2626;
+  --neon-pink-strong: 0 0 10px #EF4444, 0 0 20px #EF4444, 0 0 40px #EF4444, 0 0 80px #EF4444, 0 0 120px #EF4444;
 }
 
 /* ===== THEME UTILITIES ===== */
@@ -97,7 +97,7 @@
 }
 
 @utility text-primary {
-  color: var(--text-primary);
+  color: var(--primary);
 }
 
 @utility text-muted {
@@ -251,7 +251,9 @@
 @layer base {
 
   /* ===== ROOT THEME VARIABLES ===== */
-  :root {
+  /* Force light mode colors always - no dark mode switching */
+  :root,
+  :root.dark {
     --bg: var(--color-light-bg);
     --primary: var(--color-light-primary);
     --secondary: var(--color-light-secondary);
@@ -260,17 +262,6 @@
     --text-primary: var(--color-light-text-primary);
     --text-muted: var(--color-light-text-muted);
     --border: var(--color-light-border);
-  }
-
-  :root.dark {
-    --bg: var(--color-dark-bg);
-    --primary: var(--color-dark-primary);
-    --secondary: var(--color-dark-secondary);
-    --accent: var(--color-dark-accent);
-    --card: var(--color-dark-card);
-    --text-primary: var(--color-dark-text-primary);
-    --text-muted: var(--color-dark-text-muted);
-    --border: var(--color-dark-border);
   }
 
   /* ===== GLOBAL STYLES ===== */

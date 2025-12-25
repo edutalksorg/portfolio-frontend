@@ -19,7 +19,7 @@ const Products: React.FC = () => {
                             <ShoppingBag className="mr-2" size={20} />
                             <span className="font-semibold">Our Store</span>
                         </motion.div>
-                        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tight dark:text-white">
                             Premium <span className="text-primary italic">Products</span>
                         </h1>
                         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16">
@@ -44,7 +44,7 @@ const Products: React.FC = () => {
                                         <Mic size={32} />
                                     </div>
 
-                                    <h3 className="text-2xl font-bold mb-3">AI Pronunciation</h3>
+                                    <h3 className="text-2xl font-bold mb-3 dark:text-white">AI Pronunciation</h3>
                                     <p className="text-gray-600 dark:text-gray-400 mb-6">
                                         Master any language with our advanced AI-powered pronunciation coach. Get real-time feedback on your accent and intonation.
                                     </p>
@@ -70,7 +70,7 @@ const Products: React.FC = () => {
                                         <GraduationCap size={32} />
                                     </div>
 
-                                    <h3 className="text-2xl font-bold mb-3">Exam Portal</h3>
+                                    <h3 className="text-2xl font-bold mb-3 dark:text-white">Exam Portal</h3>
                                     <p className="text-gray-600 dark:text-gray-400 mb-6">
                                         Comprehensive testing platform with mock exams, detailed analytics, and personalized study recommendations.
                                     </p>

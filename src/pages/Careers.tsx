@@ -72,7 +72,7 @@ const Careers: React.FC = () => {
                             </motion.span>
                         </motion.span>
 
-                        <h1 className="text-3xl md:text-5xl font-black mb-6">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 dark:text-white">
                             Build the Future of{' '}
                             <motion.span
                                 className="text-primary italic inline-block"
@@ -114,7 +114,7 @@ const Careers: React.FC = () => {
             <section className="py-20">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-12">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4">
+                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Why Work at <span className="text-primary italic">Edutalks?</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -136,7 +136,7 @@ const Careers: React.FC = () => {
                                     >
                                         {value.icon}
                                     </motion.div>
-                                    <h3 className="text-xl font-bold mb-2">{value.title}</h3>
+                                    <h3 className="text-xl font-bold mb-2 dark:text-white">{value.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-400">{value.description}</p>
                                 </motion.div>
                             </StaggerItem>
@@ -149,7 +149,7 @@ const Careers: React.FC = () => {
             <section id="openings" className="py-20 bg-gray-50 dark:bg-gray-900">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-12">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4">
+                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Open <span className="text-primary italic">Positions</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -190,7 +190,7 @@ const Careers: React.FC = () => {
                                         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                                             <div className="flex-1">
                                                 <div className="flex items-center gap-3 mb-2">
-                                                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors">{job.title}</h3>
+                                                    <h3 className="text-2xl font-bold group-hover:text-primary transition-colors dark:text-white">{job.title}</h3>
                                                     <motion.span
                                                         className="px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full"
                                                         whileHover={{ scale: 1.05 }}
@@ -278,7 +278,7 @@ const Careers: React.FC = () => {
                 <div className="container mx-auto px-6 relative z-10">
                     <FadeIn className="text-center max-w-3xl mx-auto">
                         <motion.h2
-                            className="text-2xl md:text-4xl font-black mb-6"
+                            className="text-2xl md:text-4xl font-black mb-6 text-white"
                             animate={{
                                 textShadow: [
                                     '0 0 0px rgba(255, 255, 255, 0)',

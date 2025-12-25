@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                                 Get In Touch
                             </motion.span>
 
-                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight">
+                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight dark:text-white">
                                 Let's{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
                                                     {info.icon}
                                                 </motion.div>
                                                 <div>
-                                                    <h4 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors">{info.title}</h4>
+                                                    <h4 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors dark:text-white">{info.title}</h4>
                                                     <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">{info.value}</p>
                                                 </div>
                                             </motion.div>
@@ -201,7 +201,7 @@ const Contact: React.FC = () => {
                                                 />
                                             ))}
 
-                                            <h3 className="text-3xl font-black mb-4">Message Sent!</h3>
+                                            <h3 className="text-3xl font-black mb-4 dark:text-white">Message Sent!</h3>
                                             <p className="text-gray-600 dark:text-gray-400 mb-8">Thank you for reaching out. Our team will contact you shortly.</p>
                                             <motion.button
                                                 onClick={() => setFormState('idle')}
@@ -226,7 +226,7 @@ const Contact: React.FC = () => {
                                                     whileHover={{ scale: 1.02 }}
                                                 >
                                                     <motion.label
-                                                        className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60"
+                                                        className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60 dark:text-gray-300"
                                                         animate={{
                                                             color: focusedField === 'name' ? 'var(--primary)' : undefined,
                                                             y: focusedField === 'name' ? -2 : 0
@@ -243,7 +243,7 @@ const Contact: React.FC = () => {
                                                         onFocus={() => setFocusedField('name')}
                                                         onBlur={() => setFocusedField(null)}
                                                         placeholder="John Doe"
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
                                                     />
                                                 </motion.div>
 

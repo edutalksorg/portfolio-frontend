@@ -172,7 +172,7 @@ const Services: React.FC = () => {
                             What We Offer
                         </motion.span>
 
-                        <h1 className="text-3xl md:text-5xl font-black mb-6">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 dark:text-white">
                             <motion.span
                                 className="text-primary italic inline-block"
                                 animate={{ scale: [1, 1.02, 1] }}
@@ -223,7 +223,7 @@ const Services: React.FC = () => {
                                             {course.icon}
                                         </motion.div>
 
-                                        <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors">
+                                        <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors dark:text-white">
                                             {course.title}
                                         </h3>
                                         <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -258,7 +258,7 @@ const Services: React.FC = () => {
             <section className="py-20 bg-gray-50 dark:bg-gray-900">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4">
+                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Our Learning <span className="text-primary italic">Process</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -300,7 +300,7 @@ const Services: React.FC = () => {
                                 >
                                     {item.step}
                                 </motion.div>
-                                <h4 className="text-xl font-bold mb-2">{item.title}</h4>
+                                <h4 className="text-xl font-bold mb-2 dark:text-white">{item.title}</h4>
                                 <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
                             </motion.div>
                         ))}
@@ -363,7 +363,7 @@ const Services: React.FC = () => {
                                                     {React.cloneElement(selectedCourse.icon as ReactElement<{ size: number }>, { size: 32 })}
                                                 </div>
                                                 <div>
-                                                    <h3 className="text-2xl md:text-3xl font-black leading-tight">{selectedCourse.title}</h3>
+                                                    <h3 className="text-2xl md:text-3xl font-black leading-tight dark:text-white">{selectedCourse.title}</h3>
                                                     <p className="text-primary font-bold text-sm tracking-wider uppercase mt-1">Syllabus Overview</p>
                                                 </div>
                                             </div>
@@ -404,7 +404,7 @@ const Services: React.FC = () => {
                                             <div className="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                                                 <CheckCircle size={40} />
                                             </div>
-                                            <h3 className="text-3xl font-black mb-4">Interest Received!</h3>
+                                            <h3 className="text-3xl font-black mb-4 dark:text-white">Interest Received!</h3>
                                             <p className="text-gray-600 dark:text-gray-400">Our success team will contact you shortly to discuss your journey in {selectedCourse.title}.</p>
                                         </motion.div>
                                     ) : (
@@ -415,7 +415,7 @@ const Services: React.FC = () => {
                                             exit={{ opacity: 0, x: -20 }}
                                         >
                                             <div className="text-center mb-10">
-                                                <h3 className="text-3xl font-black mb-2">Join the Future</h3>
+                                                <h3 className="text-3xl font-black mb-2 dark:text-white">Join the Future</h3>
                                                 <p className="text-gray-600 dark:text-gray-400">Fill in your details to begin your transformation.</p>
                                             </div>
 
@@ -427,7 +427,7 @@ const Services: React.FC = () => {
                                                             required
                                                             type="text"
                                                             placeholder="John Doe"
-                                                            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all"
+                                                            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all dark:text-white"
                                                         />
                                                     </div>
                                                     <div className="space-y-2">

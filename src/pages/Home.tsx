@@ -50,9 +50,9 @@ const Home: React.FC = () => {
 
     return (
         <div className="w-full overflow-hidden">
-            {/* Hero Section */}
+            {/* Hero Section with Black Gradient */}
             <motion.section
-                className="relative h-screen flex items-center justify-center overflow-hidden"
+                className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black"
                 style={{ opacity: heroOpacity, scale: heroScale }}
             >
                 {/* Animated Background */}
@@ -60,7 +60,7 @@ const Home: React.FC = () => {
 
                 {/* Animated gradient orbs */}
                 <motion.div
-                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px]"
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-600/20 rounded-full blur-[128px]"
                     animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.3, 0.5, 0.3],
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                 />
                 <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-[128px]"
+                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500/20 rounded-full blur-[128px]"
                     animate={{
                         scale: [1.2, 1, 1.2],
                         opacity: [0.3, 0.5, 0.3],
@@ -82,11 +82,11 @@ const Home: React.FC = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
-                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight text-white">
                             <TextReveal text="Where Education Meets" delay={0.2} />
                             <br />
                             <motion.span
-                                className="text-primary italic inline-block"
+                                className="text-red-500 italic inline-block"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -100,29 +100,30 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-lg md:text-2xl text-light-text-secondary dark:text-dark-text-secondary mb-10 max-w-3xl mx-auto"
+                        className="text-lg md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto"
                     >
                         Edutalks is redefining the EdTech landscape by creating a space where knowledge is shared through dialogue, mentorship, and practical experience.
                     </motion.p>
+
 
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-wrap justify-center gap-6"
+                        className="flex flex-nowrap justify-center gap-2 items-center"
                     >
                         <Magnetic strength={0.2}>
-                            <a href="/products" className="px-8 py-4 bg-white dark:bg-gray-800 text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center gap-2 border-2 border-primary">
-                                Our Products <ShoppingBag size={20} />
+                            <a href="/products" className="w-36 px-4 py-2.5 bg-white text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-xs md:text-sm">
+                                Products <ShoppingBag size={16} />
                             </a>
                         </Magnetic>
                         <Magnetic strength={0.2}>
-                            <a href="/internships" className="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-primary/20 ripple-container">
-                                Explore Internships <ArrowRight size={20} />
+                            <a href="/internships" className="w-36 px-4 py-2.5 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 shadow-xl shadow-primary/20 ripple-container whitespace-nowrap text-xs md:text-sm">
+                                Internships <ArrowRight size={16} />
                             </a>
                         </Magnetic>
                         <Magnetic strength={0.2}>
-                            <a href="/contact" className="px-8 py-4 bg-transparent border-2 border-light-text dark:border-white text-light-text-primary dark:text-dark-text-primary font-bold rounded-full hover:bg-light-text hover:text-white dark:hover:bg-white dark:hover:text-black transition-all transform hover:scale-105">
+                            <a href="/contact" className="w-36 px-4 py-2.5 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all transform hover:scale-105 whitespace-nowrap text-xs md:text-sm flex items-center justify-center">
                                 Contact Us
                             </a>
                         </Magnetic>
@@ -140,7 +141,7 @@ const Home: React.FC = () => {
             </motion.section>
 
             {/* Stats Section */}
-            <section className="py-20 bg-gray-50 dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+            <section className="py-20 bg-gradient-to-br from-red-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-y border-red-100 dark:border-gray-700">
                 <div className="container mx-auto px-6">
                     <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-12">
                         {stats.map((stat, idx) => (
@@ -161,10 +162,10 @@ const Home: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-24">
+            <section className="py-24 bg-gradient-to-br from-pink-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
                 <div className="container mx-auto px-6">
                     <FadeIn className="max-w-3xl mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-6 tracking-tight">
+                        <h2 className="text-2xl md:text-4xl font-black mb-6 tracking-tight dark:text-white">
                             Empowering Your <span className="text-primary italic">Future</span>
                         </h2>
                         <p className="text-xl text-light-text-secondary dark:text-dark-text-secondary leading-relaxed">
@@ -190,7 +191,7 @@ const Home: React.FC = () => {
                                     >
                                         {feature.icon}
                                     </motion.div>
-                                    <h4 className="text-xl font-bold mb-4 group-hover:text-white transition-colors">{feature.title}</h4>
+                                    <h4 className="text-xl font-bold mb-4 group-hover:text-white transition-colors dark:text-white">{feature.title}</h4>
                                     <p className="text-light-text-secondary dark:text-dark-text-secondary group-hover:text-white/80 transition-colors leading-relaxed">
                                         {feature.description}
                                     </p>
@@ -202,10 +203,10 @@ const Home: React.FC = () => {
             </section>
 
             {/* Services Preview Section */}
-            <section className="py-20 bg-white dark:bg-gray-900">
+            <section className="py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-black mb-4">
+                        <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             <span className="text-primary italic">Courses</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -228,7 +229,7 @@ const Home: React.FC = () => {
                                     }}
                                     className="p-6 bg-gray-50 dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 transition-all"
                                 >
-                                    <h3 className="text-xl font-bold mb-3">{course.title}</h3>
+                                    <h3 className="text-xl font-bold mb-3 dark:text-white">{course.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-400">{course.description}</p>
                                 </motion.div>
                             </StaggerItem>
@@ -249,10 +250,10 @@ const Home: React.FC = () => {
             </section>
 
             {/* Internships Preview Section */}
-            <section className="py-20 bg-gray-50 dark:bg-gray-900">
+            <section className="py-20 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-black mb-4">
+                        <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             <span className="text-primary italic">Internship</span> Opportunities
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -282,7 +283,7 @@ const Home: React.FC = () => {
                                     >
                                         {benefit.icon}
                                     </motion.div>
-                                    <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
+                                    <h3 className="text-lg font-bold mb-2 dark:text-white">{benefit.title}</h3>
                                     <p className="text-sm text-gray-600 dark:text-gray-400">{benefit.description}</p>
                                 </motion.div>
                             </StaggerItem>
@@ -303,11 +304,11 @@ const Home: React.FC = () => {
             </section>
 
             {/* About Preview Section */}
-            <section className="py-20 bg-white dark:bg-gray-900">
+            <section className="py-20 bg-gradient-to-br from-white via-pink-50 to-red-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <SlideIn direction="left">
-                            <h2 className="text-3xl md:text-4xl font-black mb-6">
+                            <h2 className="text-3xl md:text-4xl font-black mb-6 dark:text-white">
                                 About <span className="text-primary italic">Edutalks</span>
                             </h2>
                             <p className="text-lg text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
@@ -331,7 +332,7 @@ const Home: React.FC = () => {
                                             >
                                                 {value.icon}
                                             </motion.div>
-                                            <span className="font-semibold">{value.label}</span>
+                                            <span className="font-semibold text-gray-900 dark:text-white">{value.label}</span>
                                         </motion.div>
                                     </StaggerItem>
                                 ))}
@@ -360,7 +361,7 @@ const Home: React.FC = () => {
                                     }}
                                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                                 >
-                                    <span className="text-primary text-9xl font-black opacity-20">EDU</span>
+                                    <span className="text-primary text-7xl font-black opacity-20">EDUTALKS</span>
                                 </motion.div>
 
                                 {/* Floating decorative elements */}
@@ -381,10 +382,10 @@ const Home: React.FC = () => {
             </section>
 
             {/* Partners Section with Marquee */}
-            <section className="py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-black mb-4">
+                        <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             Trusted by <span className="text-primary italic">Industry Leaders</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400">
@@ -403,13 +404,13 @@ const Home: React.FC = () => {
                                 {[...partners, ...partners].map((partner, idx) => (
                                     <motion.div
                                         key={idx}
-                                        whileHover={{ scale: 1.1, filter: 'grayscale(0)' }}
-                                        className="flex items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 min-w-[180px] grayscale hover:grayscale-0 transition-all"
+                                        whileHover={{ scale: 1.1 }}
+                                        className="flex items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 min-w-[180px] shadow-sm hover:shadow-md transition-all"
                                     >
                                         <img
                                             src={partner.logo}
                                             alt={partner.name}
-                                            className="max-w-full h-8 object-contain dark:brightness-0 dark:invert"
+                                            className="max-w-full h-8 object-contain"
                                             onError={(e) => {
                                                 e.currentTarget.style.display = 'none';
                                                 const parent = e.currentTarget.parentElement;
@@ -427,7 +428,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Final CTA Section */}
-            <section className="py-24 bg-white dark:bg-gray-900">
+            <section className="py-24 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
                 <div className="container mx-auto px-6">
                     <FadeIn>
                         <motion.div
@@ -448,7 +449,7 @@ const Home: React.FC = () => {
                             />
 
                             <div className="relative z-10">
-                                <h2 className="text-2xl md:text-4xl font-black mb-6">
+                                <h2 className="text-2xl md:text-4xl font-black mb-6 dark:text-white">
                                     Ready to Transform Your <span className="text-primary italic">Career?</span>
                                 </h2>
                                 <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">

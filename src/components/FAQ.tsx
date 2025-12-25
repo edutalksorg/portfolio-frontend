@@ -92,7 +92,7 @@ const FAQ: React.FC = () => {
                     <span className="inline-block p-3 bg-primary/10 text-primary rounded-2xl mb-6">
                         <HelpCircle size={32} />
                     </span>
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                    <h2 className="text-4xl md:text-5xl font-black mb-4 dark:text-white">
                         Frequently Asked <span className="text-primary italic">Questions</span>
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -145,8 +145,8 @@ const FAQ: React.FC = () => {
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ delay: index * 0.05 }}
                                         className={`bg-white dark:bg-gray-800 rounded-2xl border transition-all duration-300 overflow-hidden ${openId === faq.id
-                                                ? 'border-primary shadow-lg shadow-primary/5'
-                                                : 'border-gray-200 dark:border-gray-700 hover:border-primary/50'
+                                            ? 'border-primary shadow-lg shadow-primary/5'
+                                            : 'border-gray-200 dark:border-gray-700 hover:border-primary/50'
                                             }`}
                                     >
                                         <button
@@ -220,7 +220,7 @@ const FAQ: React.FC = () => {
                         <div className="mt-12 text-center p-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-800/50 rounded-[32px] border border-gray-200 dark:border-gray-700 shadow-xl relative overflow-hidden group">
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                            <h3 className="text-2xl font-bold mb-3 relative z-10">Still have questions?</h3>
+                            <h3 className="text-2xl font-bold mb-3 relative z-10 dark:text-white">Still have questions?</h3>
                             <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto relative z-10">
                                 Can't find the answer you're looking for? Our friendly team is here to help you.
                             </p>

@@ -45,7 +45,7 @@ const Internships: React.FC = () => {
                             </Floating>
                         </motion.span>
 
-                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight">
+                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight dark:text-white">
                             Launch Your Career with{' '}
                             <motion.span
                                 className="text-primary italic inline-block"
@@ -106,7 +106,7 @@ const Internships: React.FC = () => {
             <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-500">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4">
+                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Why Intern at <span className="text-primary italic">Edutalks?</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -128,7 +128,7 @@ const Internships: React.FC = () => {
                                     >
                                         {benefit.icon}
                                     </motion.div>
-                                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{benefit.title}</h3>
+                                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors dark:text-white">{benefit.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
                                 </motion.div>
                             </StaggerItem>
@@ -180,7 +180,7 @@ const Internships: React.FC = () => {
             <section className="py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
                 <div className="container mx-auto px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4">
+                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Application <span className="text-primary italic">Process</span>
                         </h2>
                         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
@@ -214,7 +214,7 @@ const Internships: React.FC = () => {
                                 >
                                     {idx + 1}
                                 </motion.div>
-                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
+                                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors dark:text-white">{item.title}</h3>
                                 <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-[200px] mx-auto">{item.description}</p>
                             </motion.div>
                         ))}

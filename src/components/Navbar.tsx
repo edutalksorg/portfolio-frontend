@@ -4,11 +4,11 @@ import { useTheme } from '../context/ThemeContext';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoLight from '../assets/edutalks-logo-light.svg';
-import logoDark from '../assets/edutalks-logo-dark.svg';
+
 import { Magnetic, StaggerContainer, StaggerItem } from './animations';
 
 const Navbar: React.FC = () => {
-    const { theme } = useTheme();
+    // const { theme } = useTheme(); // theme is no longer needed since navbar is always white
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
@@ -35,17 +35,14 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled
-                ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md py-3 shadow-lg border-b border-gray-200 dark:border-gray-800'
-                : 'bg-transparent py-5'
-                } `}
+            className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/90 dark:bg-white/90 backdrop-blur-md py-3 shadow-lg border-b border-gray-200 dark:border-gray-300"
         >
             <div className="container mx-auto px-6 flex justify-between items-center">
                 {/* Logo */}
                 <Magnetic strength={0.2}>
                     <Link to="/" className="flex items-center group relative z-50">
                         <img
-                            src={theme === 'dark' ? logoDark : logoLight}
+                            src={logoLight}
                             alt="EduTalks Logo"
                             className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
                         />
@@ -60,8 +57,8 @@ const Navbar: React.FC = () => {
                                 to={link.path}
                                 className={`text-sm font-bold transition-colors ${location.pathname === link.path
                                     ? 'text-primary'
-                                    : 'text-gray-800 dark:text-gray-300 hover:text-primary'
-                                    } `}
+                                    : 'text-gray-800 hover:text-primary'
+                                    }`}
                             >
                                 {link.name}
                                 {location.pathname === link.path && (
@@ -80,7 +77,7 @@ const Navbar: React.FC = () => {
                 <div className="md:hidden flex items-center gap-4 relative z-50">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="text-gray-800 dark:text-white"
+                        className="text-gray-800"
                     >
                         <AnimatePresence mode="wait">
                             <motion.div
