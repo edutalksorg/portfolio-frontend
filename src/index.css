@@ -347,6 +347,32 @@
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   }
 
+  /* Enforce legible input text colors in dark mode */
+  input,
+  textarea,
+  select {
+    /* default to theme text color (light mode) */
+    color: var(--text-primary);
+  }
+
+  /* Strongly enforce white text and readable placeholders when .dark is active */
+  .dark input,
+  .dark textarea,
+  .dark select {
+    color: var(--color-dark-text-primary) !important;
+    -webkit-text-fill-color: var(--color-dark-text-primary) !important; /* Safari/Chrome */
+  }
+
+  .dark input::placeholder,
+  .dark textarea::placeholder,
+  .dark select::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+  }
+
+  .dark label {
+    color: var(--color-dark-text-primary) !important;
+  }
+
   /* ===== CUSTOM SCROLLBAR ===== */
   ::-webkit-scrollbar {
     width: 10px;

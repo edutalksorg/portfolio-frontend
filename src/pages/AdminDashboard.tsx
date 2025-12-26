@@ -254,50 +254,50 @@ const AdminDashboard: React.FC = () => {
                             className="overflow-hidden"
                         >
                             <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 mb-10 border border-primary/20 shadow-xl shadow-primary/5">
-                                <h3 className="text-2xl font-black mb-6">{activeTab === 'jobs' ? 'Job Posting Details' : 'Team Member Details'}</h3>
+                                <h3 className="text-2xl font-black mb-6 text-gray-900 dark:text-white">{activeTab === 'jobs' ? 'Job Posting Details' : 'Team Member Details'}</h3>
 
                                 {activeTab === 'jobs' ? (
                                     <form onSubmit={handleJobSubmit} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Position Title</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Position Title</label>
                                                 <input
                                                     required
                                                     type="text"
                                                     value={jobFormData.title}
                                                     onChange={(e) => setJobFormData({ ...jobFormData, title: e.target.value })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="e.g. Creative Lead"
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Department</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Department</label>
                                                 <input
                                                     required
                                                     type="text"
                                                     value={jobFormData.department}
                                                     onChange={(e) => setJobFormData({ ...jobFormData, department: e.target.value })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="e.g. Design"
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Location</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Location</label>
                                                 <input
                                                     required
                                                     type="text"
                                                     value={jobFormData.location}
                                                     onChange={(e) => setJobFormData({ ...jobFormData, location: e.target.value })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="e.g. Remote"
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Commitment</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Commitment</label>
                                                 <select
                                                     value={jobFormData.type}
                                                     onChange={(e) => setJobFormData({ ...jobFormData, type: e.target.value as any })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all"
                                                 >
                                                     <option value="Full-time">Full-time</option>
                                                     <option value="Part-time">Part-time</option>
@@ -306,13 +306,13 @@ const AdminDashboard: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Responsibilities & Requirements</label>
+                                            <label className="text-sm font-bold text-gray-500 dark:text-white">Responsibilities & Requirements</label>
                                             <textarea
                                                 required
                                                 rows={5}
                                                 value={jobFormData.description}
                                                 onChange={(e) => setJobFormData({ ...jobFormData, description: e.target.value })}
-                                                className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all resize-none placeholder:text-gray-400"
+                                                className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all resize-none placeholder:text-gray-400"
                                                 placeholder="Tell applicants what success looks like in this role..."
                                             />
                                         </div>
@@ -329,36 +329,36 @@ const AdminDashboard: React.FC = () => {
                                     <form onSubmit={handleMemberSubmit} className="space-y-6">
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Full Name</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Full Name</label>
                                                 <input
                                                     required
                                                     type="text"
                                                     value={memberFormData.name}
                                                     onChange={(e) => setMemberFormData({ ...memberFormData, name: e.target.value })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="e.g. Sarah Jenkins"
                                                 />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Designation</label>
+                                                <label className="text-sm font-bold text-gray-500 dark:text-white">Designation</label>
                                                 <input
                                                     required
                                                     type="text"
                                                     value={memberFormData.role}
                                                     onChange={(e) => setMemberFormData({ ...memberFormData, role: e.target.value })}
-                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="e.g. Lead Instructor"
                                                 />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Profile Image URL</label>
+                                            <label className="text-sm font-bold text-gray-500 dark:text-white">Profile Image URL</label>
                                             <div className="flex gap-4">
                                                 <input
                                                     type="url"
                                                     value={memberFormData.image}
                                                     onChange={(e) => setMemberFormData({ ...memberFormData, image: e.target.value })}
-                                                    className="flex-1 px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all placeholder:text-gray-400"
+                                                    className="flex-1 px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="https://images.unsplash.com/..."
                                                 />
                                                 <div className="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden">
@@ -367,12 +367,12 @@ const AdminDashboard: React.FC = () => {
                                             </div>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-sm font-bold text-gray-500 dark:text-gray-400">Professional Bio</label>
+                                            <label className="text-sm font-bold text-gray-500 dark:text-white">Professional Bio</label>
                                             <textarea
                                                 rows={4}
                                                 value={memberFormData.description}
                                                 onChange={(e) => setMemberFormData({ ...memberFormData, description: e.target.value })}
-                                                className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 focus:border-primary outline-none transition-all resize-none placeholder:text-gray-400"
+                                                className="w-full px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all resize-none placeholder:text-gray-400"
                                                 placeholder="Briefly describe their expertise and passion..."
                                             />
                                         </div>
