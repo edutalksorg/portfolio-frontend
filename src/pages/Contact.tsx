@@ -289,8 +289,8 @@ const Contact: React.FC = () => {
                                                 <motion.label
                                                     className="text-sm font-bold ml-1 uppercase tracking-wider"
                                                     style={{
-                                                        color: '#000000',
-                                                        WebkitTextFillColor: '#000000',
+                                                        color: '#6B7280',
+                                                        WebkitTextFillColor: '#6B7280',
                                                         opacity: 1,
                                                         fontWeight: 'bold'
                                                     }}
@@ -317,8 +317,8 @@ const Contact: React.FC = () => {
                                                 <motion.label
                                                     className="text-sm font-bold ml-1 uppercase tracking-wider"
                                                     style={{
-                                                        color: '#000000',
-                                                        WebkitTextFillColor: '#000000',
+                                                        color: '#6B7280',
+                                                        WebkitTextFillColor: '#6B7280',
                                                         opacity: 1,
                                                         fontWeight: 'bold'
                                                     }}
