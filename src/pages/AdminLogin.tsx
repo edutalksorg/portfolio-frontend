@@ -71,7 +71,7 @@ const AdminLogin: React.FC = () => {
                         -webkit-box-shadow: 0 0 0 1000px #fff1f2 inset !important;
                         box-shadow: 0 0 0 1000px #fff1f2 inset !important;
                         -webkit-text-fill-color: #dc2626 !important;
-                        color: #dc2626 !important;
+                        color: #dc2626 ;
                         caret-color: #dc2626 !important;
                         transition: background-color 5000s ease-in-out 0s;
                     }
@@ -79,7 +79,7 @@ const AdminLogin: React.FC = () => {
                     /* NORMAL & FOCUS STATE - ID Specificity */
                     #email, #password {
                         background: linear-gradient(to right, #fef2f2, #ffe4e6) !important;
-                        color: #dc2626 !important;
+                        color: #dc2626 ;
                         -webkit-text-fill-color: #dc2626 !important;
                         caret-color: #dc2626 !important;
                         border-color: #e5e7eb !important;
@@ -95,7 +95,7 @@ const AdminLogin: React.FC = () => {
                     /* Button Gradient override */
                     .pastel-gradient-btn {
                         background: linear-gradient(to right, #fef2f2, #ffe4e6) !important;
-                        color: #dc2626 !important; /* Text also red to match inputs if desired, or black? User said 'white text to red', usually refers to input. Keeping button text consistent? User didn't specify button. I'll stick to black for button or make it red? Button text was black. I'll make button text #dc2626 to match? No, let's keep button black unless asked. Wait, 'keep that white text to red'. User might mean input. I will only change inputs first. */
+                        color: #dc2626 ; /* Text also red to match inputs if desired, or black? User said 'white text to red', usually refers to input. Keeping button text consistent? User didn't specify button. I'll stick to black for button or make it red? Button text was black. I'll make button text #dc2626 to match? No, let's keep button black unless asked. Wait, 'keep that white text to red'. User might mean input. I will only change inputs first. */
                         border: 1px solid #fee2e2 !important;
                     }
                     .pastel-gradient-btn:hover {

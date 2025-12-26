@@ -258,12 +258,12 @@ const Careers: React.FC = () => {
             </section>
 
             {/* CTA Section with Wave */}
-            <section className="py-20 bg-gradient-to-br from-primary to-primary-dark text-white relative overflow-hidden">
+            <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 relative overflow-hidden">
                 {/* Animated wave background */}
                 <motion.div
-                    className="absolute inset-0 opacity-10"
+                    className="absolute inset-0 opacity-30 dark:opacity-10"
                     style={{
-                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ef4444' fill-opacity='1' d='M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E")`
                     }}
                     animate={{
                         backgroundPositionX: ['0%', '100%']
@@ -278,25 +278,25 @@ const Careers: React.FC = () => {
                 <div className="container mx-auto px-6 relative z-10">
                     <FadeIn className="text-center max-w-3xl mx-auto">
                         <motion.h2
-                            className="text-2xl md:text-4xl font-black mb-6 text-white"
+                            className="text-2xl md:text-4xl font-black mb-6 text-gray-900 dark:text-white"
                             animate={{
                                 textShadow: [
-                                    '0 0 0px rgba(255, 255, 255, 0)',
-                                    '0 0 20px rgba(255, 255, 255, 0.3)',
-                                    '0 0 0px rgba(255, 255, 255, 0)'
+                                    '0 0 0px rgba(239, 68, 68, 0)',
+                                    '0 0 20px rgba(239, 68, 68, 0.1)',
+                                    '0 0 0px rgba(239, 68, 68, 0)'
                                 ]
                             }}
                             transition={{ duration: 3, repeat: Infinity }}
                         >
                             Ready to Make an Impact?
                         </motion.h2>
-                        <p className="text-lg md:text-xl text-white/90 mb-8">
+                        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8">
                             Join our team and help shape the future of education for millions of learners.
                         </p>
                         <Magnetic>
                             <motion.a
                                 href="mailto:recruiter@edutalksacademy.in"
-                                className="inline-block px-10 py-5 bg-white text-primary font-black rounded-full hover:shadow-2xl transition-all"
+                                className="inline-block px-10 py-5 bg-primary text-white font-black rounded-full hover:bg-primary-dark hover:shadow-2xl transition-all shadow-xl shadow-primary/20"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >

@@ -158,7 +158,7 @@ const About: React.FC = () => {
             </section>
 
             {/* Quick Stats */}
-            <section className="py-16 bg-primary text-white">
+            <section className="py-16 bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-white">
                 <div className="container mx-auto px-6">
                     <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         {[
