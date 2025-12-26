@@ -198,7 +198,7 @@ const AdminDashboard: React.FC = () => {
                 {/* Header */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
                     <div>
-                        <h1 className="text-4xl font-black tracking-tight">Admin Dashboard</h1>
+                        <h1 className="text-4xl font-black tracking-tight text-gray-900 dark:text-white">Admin Dashboard</h1>
                         <p className="text-gray-600 dark:text-gray-400 mt-2 text-lg">Control center for Edutalks operations</p>
                     </div>
                     <div className="flex gap-4">
@@ -232,7 +232,7 @@ const AdminDashboard: React.FC = () => {
 
                 {/* Sub-header with Add Button */}
                 <div className="flex justify-between items-center mb-8 bg-white dark:bg-gray-800 p-6 rounded-3xl border border-gray-200 dark:border-gray-700 shadow-sm">
-                    <h2 className="text-2xl font-black">
+                    <h2 className="text-2xl font-black text-gray-900 dark:text-white">
                         {activeTab === 'jobs' ? `Active Postings (${jobs.length})` : `Team Members (${team.length})`}
                     </h2>
                     <button
