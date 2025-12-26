@@ -110,7 +110,7 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-nowrap justify-center gap-2 items-center"
+                        className="flex flex-wrap justify-center gap-3 items-center"
                     >
                         <Magnetic strength={0.2}>
                             <a href="/products" className="w-36 px-4 py-2.5 bg-white text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-xs md:text-sm">
@@ -220,17 +220,17 @@ const Home: React.FC = () => {
                             { title: 'Data Science & Analytics', description: 'Extract powerful insights from complex data sets using statistical analysis and machine learning.' },
                             { title: 'Full Stack Development', description: 'Comprehensive training across frontend and backend technologies to build scalable applications.' }
                         ].map((course, idx) => (
-                            <StaggerItem key={idx}>
+                            <StaggerItem key={idx} className="h-full">
                                 <motion.div
                                     whileHover={{
                                         y: -5,
                                         borderColor: 'var(--primary)',
                                         boxShadow: '0 20px 40px -15px rgba(79, 70, 229, 0.2)'
                                     }}
-                                    className="p-6 bg-gray-50 dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 transition-all"
+                                    className="p-6 bg-gray-50 dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 transition-all h-full flex flex-col"
                                 >
                                     <h3 className="text-xl font-bold mb-3 dark:text-white">{course.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{course.description}</p>
+                                    <p className="text-gray-600 dark:text-gray-400 flex-grow">{course.description}</p>
                                 </motion.div>
                             </StaggerItem>
                         ))}
@@ -337,14 +337,16 @@ const Home: React.FC = () => {
                                     </StaggerItem>
                                 ))}
                             </StaggerContainer>
-                            <Magnetic>
-                                <a
-                                    href="/about"
-                                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105"
-                                >
-                                    Learn More About Us <ArrowRight size={20} />
-                                </a>
-                            </Magnetic>
+                            <div className="flex justify-center md:justify-start">
+                                <Magnetic>
+                                    <a
+                                        href="/about"
+                                        className="inline-flex items-center gap-2 px-6 py-3 text-sm bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105"
+                                    >
+                                        Learn More About Us <ArrowRight size={20} />
+                                    </a>
+                                </Magnetic>
+                            </div>
                         </SlideIn>
 
                         <SlideIn direction="right" delay={0.2}>
@@ -361,7 +363,7 @@ const Home: React.FC = () => {
                                     }}
                                     transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
                                 >
-                                    <span className="text-primary text-7xl font-black opacity-20">EDUTALKS</span>
+                                    <span className="text-primary text-4xl md:text-7xl font-black opacity-20">EDUTALKS</span>
                                 </motion.div>
 
                                 {/* Floating decorative elements */}
@@ -457,12 +459,12 @@ const Home: React.FC = () => {
                                 </p>
                                 <div className="flex flex-wrap justify-center gap-4">
                                     <Magnetic>
-                                        <a href="/services" className="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20">
+                                        <a href="/services" className="px-6 py-3 text-sm bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20 inline-block">
                                             Explore Courses
                                         </a>
                                     </Magnetic>
                                     <Magnetic>
-                                        <a href="/contact" className="px-8 py-4 bg-white dark:bg-gray-800 text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary">
+                                        <a href="/contact" className="px-6 py-3 text-sm bg-white dark:bg-gray-800 text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary inline-block">
                                             Contact Us
                                         </a>
                                     </Magnetic>

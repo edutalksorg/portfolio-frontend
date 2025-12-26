@@ -18,7 +18,7 @@ interface FadeInProps extends Omit<HTMLMotionProps<'div'>, 'ref'> {
 export const FadeIn = React.forwardRef<HTMLDivElement, FadeInProps>(({
     children,
     delay = 0,
-    duration = 0.6,
+    duration = 0.5,
     direction = 'up',
     distance = 30,
     once = true,
@@ -27,7 +27,7 @@ export const FadeIn = React.forwardRef<HTMLDivElement, FadeInProps>(({
 }, ref) => {
     const internalRef = useRef<HTMLDivElement>(null);
     const targetRef = (ref as React.RefObject<HTMLDivElement>) || internalRef;
-    const isInView = useInView(targetRef, { once, margin: '-50px' });
+    const isInView = useInView(targetRef, { once, margin: '-10px' });
 
     const directionOffset = {
         up: { y: distance, x: 0 },
@@ -67,16 +67,16 @@ interface SlideInProps extends Omit<HTMLMotionProps<'div'>, 'ref'> {
 export const SlideIn = React.forwardRef<HTMLDivElement, SlideInProps>(({
     children,
     delay = 0,
-    duration = 0.7,
+    duration = 0.5,
     direction = 'left',
-    distance = 100,
+    distance = 50,
     once = true,
     className = '',
     ...props
 }, ref) => {
     const internalRef = useRef<HTMLDivElement>(null);
     const targetRef = (ref as React.RefObject<HTMLDivElement>) || internalRef;
-    const isInView = useInView(targetRef, { once, margin: '-100px' });
+    const isInView = useInView(targetRef, { once, margin: '-20px' });
 
     const directionOffset = {
         up: { y: distance, x: 0 },
@@ -165,7 +165,7 @@ export const StaggerContainer = React.forwardRef<HTMLDivElement, StaggerContaine
 }, ref) => {
     const internalRef = useRef<HTMLDivElement>(null);
     const targetRef = (ref as React.RefObject<HTMLDivElement>) || internalRef;
-    const isInView = useInView(targetRef, { once, margin: '-50px' });
+    const isInView = useInView(targetRef, { once, margin: '-10px' });
 
     const containerVariants: Variants = {
         hidden: {},

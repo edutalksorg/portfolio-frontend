@@ -144,7 +144,7 @@ const Internships: React.FC = () => {
                 <div className="container mx-auto px-6">
                     <FadeIn>
                         <motion.div
-                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-primary/90 to-indigo-600 text-white rounded-[2.5rem] p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-primary/30"
+                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white rounded-[2.5rem] p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-red-500/30"
                             whileHover={{ scale: 1.01 }}
                             transition={{ duration: 0.5 }}
                         >
@@ -156,16 +156,16 @@ const Internships: React.FC = () => {
                                 <span className="inline-block p-4 bg-white/10 backdrop-blur-md rounded-2xl mb-8">
                                     <Briefcase size={40} className="text-white" />
                                 </span>
-                                <h2 className="text-2xl md:text-4xl font-black mb-6 leading-tight">
+                                <h2 className="text-2xl md:text-4xl font-black mb-6 leading-tight text-white">
                                     Looking for Open Roles?
                                 </h2>
-                                <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto font-medium">
+                                <p className="text-xl text-red-100 mb-10 max-w-2xl mx-auto font-medium">
                                     We manage all our internship and full-time openings centrally. Visit our Careers page to find the perfect role for you.
                                 </p>
                                 <Magnetic>
                                     <a
                                         href="/careers"
-                                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-bold text-lg rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1"
+                                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-red-600 font-bold text-lg rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1"
                                     >
                                         Search Openings <ArrowRight size={22} />
                                     </a>

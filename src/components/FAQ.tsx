@@ -102,7 +102,7 @@ const FAQ: React.FC = () => {
 
                 <div className="max-w-4xl mx-auto">
                     {/* Search Bar */}
-                    <FadeIn delay={0.1} className="mb-8">
+                    <FadeIn delay={0} className="mb-8">
                         <div className="relative group">
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-primary transition-colors" size={20} />
                             <input
@@ -110,13 +110,13 @@ const FAQ: React.FC = () => {
                                 placeholder="Search questions..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-4 focus:ring-primary/10 outline-none transition-all shadow-sm"
+                                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all shadow-sm"
                             />
                         </div>
                     </FadeIn>
 
                     {/* Category Filters */}
-                    <SlideIn direction="up" delay={0.2} className="flex flex-wrap gap-3 mb-10 justify-center">
+                    <SlideIn direction="up" delay={0.1} className="flex flex-wrap gap-3 mb-10 justify-center">
                         {categories.map((category) => (
                             <motion.button
                                 key={category}
@@ -216,7 +216,7 @@ const FAQ: React.FC = () => {
                     </div>
 
                     {/* Still Have Questions CTA */}
-                    <FadeIn delay={0.3}>
+                    <FadeIn delay={0.1}>
                         <div className="mt-12 text-center p-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-800/50 rounded-[32px] border border-gray-200 dark:border-gray-700 shadow-xl relative overflow-hidden group">
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 

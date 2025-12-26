@@ -241,10 +241,11 @@ const About: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-primary text-white">
-                <div className="container mx-auto px-6">
+            <section className="py-20 bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div className="container mx-auto px-6 relative z-10">
                     <FadeIn className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-5xl font-black mb-6">
+                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                             Ready to Join Our Community?
                         </h2>
                         <p className="text-xl text-white/90 mb-8">
@@ -252,7 +253,7 @@ const About: React.FC = () => {
                         </p>
                         <a
                             href="/contact"
-                            className="inline-block px-10 py-5 bg-white text-primary font-black rounded-full hover:shadow-2xl transition-all transform hover:scale-105"
+                            className="inline-block px-10 py-5 bg-white text-red-600 font-bold rounded-full hover:shadow-2xl transition-all transform hover:scale-105"
                         >
                             Get Started
                         </a>
