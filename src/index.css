@@ -369,6 +369,15 @@
     color: rgba(255,255,255,0.6) !important;
   }
 
+  /* Fix Chrome/Chromium autofill background and text in dark mode */
+  .dark input:-webkit-autofill,
+  .dark textarea:-webkit-autofill,
+  .dark select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-dark-card) inset !important;
+    box-shadow: 0 0 0px 1000px var(--color-dark-card) inset !important;
+    -webkit-text-fill-color: var(--color-dark-text-primary) !important;
+  }
+
   .dark label {
     color: var(--color-dark-text-primary) !important;
   }

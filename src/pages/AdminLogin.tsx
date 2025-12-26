@@ -68,11 +68,11 @@ const AdminLogin: React.FC = () => {
 
                     <div className="space-y-4">
                         <div>
-                            <label htmlFor="email" className="block text-sm font-semibold mb-2">
+                            <label htmlFor="email" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
                                 Email Address
                             </label>
                             <div className="relative">
-                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300" size={20} />
                                 <input
                                     id="email"
                                     name="email"
@@ -80,18 +80,18 @@ const AdminLogin: React.FC = () => {
                                     required
                                     value={formData.email}
                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                    className="w-full pl-12 pr-4 py-3 rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full pl-12 pr-4 py-3 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                     placeholder="admin@gmail.com"
                                 />
                             </div>
                         </div>
 
                         <div>
-                            <label htmlFor="password" className="block text-sm font-semibold mb-2">
+                            <label htmlFor="password" className="block text-sm font-semibold mb-2 text-gray-900 dark:text-white">
                                 Password
                             </label>
                             <div className="relative">
-                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+                                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-300" size={20} />
                                 <input
                                     id="password"
                                     name="password"
@@ -99,12 +99,12 @@ const AdminLogin: React.FC = () => {
                                     required
                                     value={formData.password}
                                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                                    className="w-full pl-12 pr-4 py-3 rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                    className="w-full pl-12 pr-4 py-3 rounded-2xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white placeholder:text-gray-400 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                     placeholder="••••••••"
                                 />
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
                     <button
                         type="submit"
