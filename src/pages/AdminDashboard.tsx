@@ -145,6 +145,20 @@ const AdminDashboard: React.FC = () => {
         }
     };
 
+    const handleDeleteJob = async (id: number) => {
+        if (!confirm('Are you sure you want to delete this job posting?')) return;
+        const token = localStorage.getItem('adminToken');
+        try {
+            const response = await api.delete(`/jobs/${id}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+            const data = response.data;
+            if (data.success) fetchJobs();
+        } catch (error) {
+            console.error('Delete job error:', error);
+        }
+    };
+
     const handleEditJob = (job: Job) => {
         setEditingJob(job);
         setJobFormData({
@@ -403,7 +417,11 @@ const AdminDashboard: React.FC = () => {
                                     >
                                         <Edit2 size={20} />
                                     </button>
-                                    <button className="p-3 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all"><Trash2 size={20} /></button>
+                                    <button
+                                        onClick={() => handleDeleteJob(job.id)}
+                                        className="p-3 bg-red-500/10 text-red-500 rounded-xl hover:bg-red-500 hover:text-white transition-all">
+                                        <Trash2 size={20} />
+                                    </button>
                                 </div>
                             </motion.div>
                         ))
