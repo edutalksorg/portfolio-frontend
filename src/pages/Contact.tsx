@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                                 Get In Touch
                             </motion.span>
 
-                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight text-black dark:text-white">
+                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight dark:text-white">
                                 Let's{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -214,7 +214,7 @@ const Contact: React.FC = () => {
                                     ) : (
                                         <motion.form
                                             onSubmit={handleSubmit}
-                                            className="space-y-6 relative z-10 contact-form-override"
+                                            className="space-y-6 relative z-10"
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
@@ -226,18 +226,14 @@ const Contact: React.FC = () => {
                                                     whileHover={{ scale: 1.02 }}
                                                 >
                                                     <motion.label
-                                                        className="text-sm font-bold ml-1 uppercase tracking-wider"
-                                                        style={{
-                                                            color: '#000000',
-                                                            WebkitTextFillColor: '#000000',
-                                                            opacity: 1,
-                                                            fontWeight: 'bold'
+                                                        className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60 dark:text-gray-300"
+                                                        animate={{
+                                                            color: focusedField === 'name' ? 'var(--primary)' : undefined,
+                                                            y: focusedField === 'name' ? -2 : 0
                                                         }}
                                                     >
                                                         Full Name
                                                     </motion.label>
-
-
                                                     <input
                                                         required
                                                         type="text"
@@ -247,7 +243,7 @@ const Contact: React.FC = () => {
                                                         onFocus={() => setFocusedField('name')}
                                                         onBlur={() => setFocusedField(null)}
                                                         placeholder="John Doe"
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-black placeholder:text-black dark:text-white"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all dark:text-white"
                                                     />
                                                 </motion.div>
 
@@ -257,12 +253,9 @@ const Contact: React.FC = () => {
                                                     whileHover={{ scale: 1.02 }}
                                                 >
                                                     <motion.label
-                                                        className="text-sm font-bold ml-1 uppercase tracking-wider"
-                                                        style={{
-                                                            color: '#000000',
-                                                            WebkitTextFillColor: '#000000',
-                                                            opacity: 1,
-                                                            fontWeight: 'bold'
+                                                        className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60"
+                                                        animate={{
+                                                            color: focusedField === 'email' ? 'var(--primary)' : undefined
                                                         }}
                                                     >
                                                         Email Address
@@ -276,7 +269,7 @@ const Contact: React.FC = () => {
                                                         onFocus={() => setFocusedField('email')}
                                                         onBlur={() => setFocusedField(null)}
                                                         placeholder="john@example.com"
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-black placeholder:text-black dark:text-white"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     />
                                                 </motion.div>
                                             </div>
@@ -287,12 +280,9 @@ const Contact: React.FC = () => {
                                                 whileHover={{ scale: 1.01 }}
                                             >
                                                 <motion.label
-                                                    className="text-sm font-bold ml-1 uppercase tracking-wider"
-                                                    style={{
-                                                        color: '#6B7280',
-                                                        WebkitTextFillColor: '#6B7280',
-                                                        opacity: 1,
-                                                        fontWeight: 'bold'
+                                                    className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60"
+                                                    animate={{
+                                                        color: focusedField === 'phone' ? 'var(--primary)' : undefined
                                                     }}
                                                 >
                                                     Phone Number
@@ -305,7 +295,7 @@ const Contact: React.FC = () => {
                                                     onFocus={() => setFocusedField('phone')}
                                                     onBlur={() => setFocusedField(null)}
                                                     placeholder="+91 00000 00000"
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-black placeholder:text-black dark:text-white"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                 />
                                             </motion.div>
 
@@ -315,12 +305,9 @@ const Contact: React.FC = () => {
                                                 whileHover={{ scale: 1.01 }}
                                             >
                                                 <motion.label
-                                                    className="text-sm font-bold ml-1 uppercase tracking-wider"
-                                                    style={{
-                                                        color: '#6B7280',
-                                                        WebkitTextFillColor: '#6B7280',
-                                                        opacity: 1,
-                                                        fontWeight: 'bold'
+                                                    className="text-sm font-bold ml-1 uppercase tracking-wider opacity-60"
+                                                    animate={{
+                                                        color: focusedField === 'message' ? 'var(--primary)' : undefined
                                                     }}
                                                 >
                                                     Your Message
@@ -331,8 +318,10 @@ const Contact: React.FC = () => {
                                                     value={formData.message}
                                                     onChange={handleChange}
                                                     onFocus={() => setFocusedField('message')}
+                                                    onBlur={() => setFocusedField(null)}
+                                                    rows={5}
                                                     placeholder="How can we help you?"
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-black placeholder:text-black dark:text-white"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                                                 />
                                             </motion.div>
 
@@ -369,62 +358,6 @@ const Contact: React.FC = () => {
                         </SlideIn>
                     </div>
                 </div>
-
-                <style>{`
-                    /* Light Mode Overrides */
-                    .contact-form-override input::placeholder,
-                    .contact-form-override textarea::placeholder {
-                        color: #000000 !important;
-                        opacity: 1 !important;
-                        -webkit-text-fill-color: #000000 !important;
-                    }
-                    .contact-form-override input,
-                    .contact-form-override textarea {
-                        color: #000000 !important;
-                        -webkit-text-fill-color: #000000 !important;
-                        caret-color: #000000 !important;
-                    }
-                    .contact-form-override input[type="text"],
-                    .contact-form-override input[type="email"],
-                    .contact-form-override input[type="tel"],
-                    .contact-form-override textarea {
-                        color: #000000 !important;
-                        -webkit-text-fill-color: #000000 !important;
-                        caret-color: #000000 !important;
-                    }
-                    .contact-form-override label {
-                        color: #000 !important;
-                        opacity: 1 !important;
-                        -webkit-text-fill-color: #000 !important;
-                    }
-
-                    /* Dark Mode Overrides */
-                    .dark .contact-form-override input::placeholder,
-                    .dark .contact-form-override textarea::placeholder {
-                        color: #9ca3af !important; /* Light Gray */
-                        opacity: 1 !important;
-                        -webkit-text-fill-color: #9ca3af !important;
-                    }
-                    .dark .contact-form-override input,
-                    .dark .contact-form-override textarea {
-                        color: #ffffff !important;
-                        -webkit-text-fill-color: #ffffff !important;
-                        caret-color: #ffffff !important;
-                    }
-                    .dark .contact-form-override input[type="text"],
-                    .dark .contact-form-override input[type="email"],
-                    .dark .contact-form-override input[type="tel"],
-                    .dark .contact-form-override textarea {
-                        color: #ffffff !important;
-                        -webkit-text-fill-color: #ffffff !important;
-                        caret-color: #ffffff !important;
-                    }
-                    .dark .contact-form-override label {
-                        color: #ffffff !important;
-                        opacity: 1 !important;
-                        -webkit-text-fill-color: #ffffff !important;
-                    }
-                `}</style>
             </section>
         </div>
     );
