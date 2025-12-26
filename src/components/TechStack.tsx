@@ -49,7 +49,7 @@ const TechStack: React.FC = () => {
         <section className="py-24 bg-white dark:bg-gray-900 overflow-hidden">
             <div className="container mx-auto px-6">
                 <FadeIn className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-black mb-4">
+                    <h2 className="text-4xl md:text-5xl font-black mb-4 text-gray-900 dark:text-white">
                         Our <span className="text-primary italic">Technology</span> Stack
                     </h2>
                     <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
