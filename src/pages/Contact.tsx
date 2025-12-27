@@ -229,7 +229,7 @@ const Contact: React.FC = () => {
                                                         name="name"
                                                         value={formData.name}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-gray-900 dark:text-white"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     />
                                                 </motion.div>
 
@@ -244,7 +244,7 @@ const Contact: React.FC = () => {
                                                         name="email"
                                                         value={formData.email}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-gray-900 dark:text-white"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     />
                                                 </motion.div>
                                             </div>
@@ -260,7 +260,7 @@ const Contact: React.FC = () => {
                                                     name="phone"
                                                     value={formData.phone}
                                                     onChange={handleChange}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-gray-900 dark:text-white"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                 />
                                             </motion.div>
 
@@ -276,7 +276,7 @@ const Contact: React.FC = () => {
                                                     value={formData.message}
                                                     onChange={handleChange}
                                                     rows={5}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none text-gray-900 dark:text-white"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                                                 />
                                             </motion.div>
 
