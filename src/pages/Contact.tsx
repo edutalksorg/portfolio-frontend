@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
 import { SlideIn, StaggerContainer, StaggerItem, Magnetic } from '../components/animations';
 import { FloatingOrbs } from '../components/animations/ParticleField';
 import api from '../utils/api';
@@ -17,7 +17,6 @@ const Contact: React.FC = () => {
     });
 
     const [errorMessage, setErrorMessage] = useState('');
-    const [focusedField, setFocusedField] = useState<string | null>(null);
 
     useEffect(() => {
         if (formState === 'success') {
