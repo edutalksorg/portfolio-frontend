@@ -351,8 +351,9 @@
   input,
   textarea,
   select {
-    /* default to theme text color (light mode) */
-    color: var(--text-primary);
+    /* default to black text for light mode */
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
   }
 
   /* Strongly enforce white text and readable placeholders when .dark is active */
@@ -360,14 +361,11 @@
   .dark textarea,
   .dark select {
     color: var(--color-dark-text-primary) !important;
-    -webkit-text-fill-color: var(--color-dark-text-primary) !important; /* Safari/Chrome */
+    -webkit-text-fill-color: var(--color-dark-text-primary) !important;
+    /* Safari/Chrome */
   }
 
-  .dark input::placeholder,
-  .dark textarea::placeholder,
-  .dark select::placeholder {
-    color: rgba(255,255,255,0.6) !important;
-  }
+
 
   /* Fix Chrome/Chromium autofill background and text in dark mode */
   .dark input:-webkit-autofill,
@@ -378,9 +376,7 @@
     -webkit-text-fill-color: var(--color-dark-text-primary) !important;
   }
 
-  .dark label {
-    color: var(--color-dark-text-primary) !important;
-  }
+
 
   /* ===== CUSTOM SCROLLBAR ===== */
   ::-webkit-scrollbar {
