@@ -324,9 +324,7 @@ object {
 @layer base {
 
   /* ===== ROOT THEME VARIABLES ===== */
-  /* Force light mode colors always - no dark mode switching */
-  :root,
-  :root.dark {
+  :root {
     --bg: var(--color-light-bg);
     --primary: var(--color-light-primary);
     --secondary: var(--color-light-secondary);
@@ -335,6 +333,17 @@ object {
     --text-primary: var(--color-light-text-primary);
     --text-muted: var(--color-light-text-muted);
     --border: var(--color-light-border);
+  }
+
+  .dark {
+    --bg: var(--color-dark-bg);
+    --primary: var(--color-dark-primary);
+    --secondary: var(--color-dark-secondary);
+    --accent: var(--color-dark-accent);
+    --card: var(--color-dark-card);
+    --text-primary: var(--color-dark-text-primary);
+    --text-muted: var(--color-dark-text-muted);
+    --border: var(--color-dark-border);
   }
 
   /* ===== GLOBAL STYLES ===== */
@@ -420,33 +429,21 @@ object {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   }
 
-  /* Enforce legible input text colors in dark mode */
+  /* Enforce legible input text colors using theme variables */
   input,
   textarea,
   select {
-    /* default to black text for light mode */
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
   }
 
-  /* Strongly enforce white text and readable placeholders when .dark is active */
-  .dark input,
-  .dark textarea,
-  .dark select {
-    color: var(--color-dark-text-primary) !important;
-    -webkit-text-fill-color: var(--color-dark-text-primary) !important;
-    /* Safari/Chrome */
-  }
-
-
-
-  /* Fix Chrome/Chromium autofill background and text in dark mode */
-  .dark input:-webkit-autofill,
-  .dark textarea:-webkit-autofill,
-  .dark select:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px var(--color-dark-card) inset !important;
-    box-shadow: 0 0 0px 1000px var(--color-dark-card) inset !important;
-    -webkit-text-fill-color: var(--color-dark-text-primary) !important;
+  /* Fix Chrome/Chromium autofill background and text */
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg) inset !important;
+    box-shadow: 0 0 0px 1000px var(--bg) inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
   }
 
 
