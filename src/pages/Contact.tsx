@@ -87,11 +87,11 @@ const Contact: React.FC = () => {
 
     return (
         <div className="pt-24 min-h-screen overflow-hidden">
-            <section className="py-20 relative">
+            <section className="py-12 sm:py-20 relative">
                 <FloatingOrbs orbCount={3} />
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-20">
 
                         {/* LEFT INFO */}
                         <SlideIn direction="left">
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                                 Get In Touch
                             </motion.span>
 
-                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight dark:text-white">
+                            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 sm:mb-8 leading-tight dark:text-white">
                                 Let's{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                                 </motion.span>
                             </h1>
 
-                            <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 leading-relaxed">
+                            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 leading-relaxed">
                                 Have questions about our programs or want to partner with us?
                                 Reach out and our team will get back to you within 24 hours.
                             </p>
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                         {/* RIGHT FORM */}
                         <SlideIn direction="right" delay={0.2}>
                             <motion.div
-                                className="bg-white dark:bg-gray-900 p-10 md:p-12 rounded-[40px] border border-gray-200 dark:border-white/10 shadow-2xl relative overflow-hidden"
+                                className="bg-white dark:bg-gray-900 p-6 sm:p-10 md:p-12 rounded-[40px] border border-gray-200 dark:border-white/10 shadow-2xl relative overflow-hidden"
                                 whileHover={{ scale: 1.01 }}
                                 transition={{ duration: 0.3 }}
                             >
@@ -216,7 +216,7 @@ const Contact: React.FC = () => {
                                         >
 
                                             {/* NAME + EMAIL */}
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
                                                 <motion.div className="space-y-2">
                                                     <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-gray-700 dark:text-white">

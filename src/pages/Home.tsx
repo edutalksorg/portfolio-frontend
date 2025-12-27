@@ -76,13 +76,13 @@ const Home: React.FC = () => {
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 />
 
-                <div className="container mx-auto px-6 relative z-10 text-center">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     >
-                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight text-white">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 tracking-tight text-white">
                             <TextReveal text="Where Education Meets" delay={0.2} />
                             <br />
                             <motion.span
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-lg md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto"
+                        className="text-base sm:text-lg md:text-2xl text-gray-300 mb-8 sm:mb-10 max-w-3xl mx-auto px-4"
                     >
                         Edutalks is redefining the EdTech landscape by creating a space where knowledge is shared through dialogue, mentorship, and practical experience.
                     </motion.p>
@@ -110,20 +110,20 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-wrap justify-center gap-3 items-center"
+                        className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 items-center px-4"
                     >
                         <Magnetic strength={0.2}>
-                            <a href="/products" className="w-36 px-4 py-2.5 bg-white text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-xs md:text-sm">
+                            <a href="/products" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-white text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
                                 Products <ShoppingBag size={16} />
                             </a>
                         </Magnetic>
                         <Magnetic strength={0.2}>
-                            <a href="/internships" className="w-36 px-4 py-2.5 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 shadow-xl shadow-primary/20 ripple-container whitespace-nowrap text-xs md:text-sm">
+                            <a href="/internships" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 shadow-xl shadow-primary/20 ripple-container whitespace-nowrap text-sm">
                                 Internships <ArrowRight size={16} />
                             </a>
                         </Magnetic>
                         <Magnetic strength={0.2}>
-                            <a href="/contact" className="w-36 px-4 py-2.5 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all transform hover:scale-105 whitespace-nowrap text-xs md:text-sm flex items-center justify-center">
+                            <a href="/contact" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all transform hover:scale-105 whitespace-nowrap text-sm flex items-center justify-center">
                                 Contact Us
                             </a>
                         </Magnetic>
@@ -141,9 +141,9 @@ const Home: React.FC = () => {
             </motion.section>
 
             {/* Stats Section */}
-            <section className="py-20 bg-gradient-to-br from-red-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-y border-red-100 dark:border-gray-700">
-                <div className="container mx-auto px-6">
-                    <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-12">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-y border-red-100 dark:border-gray-700">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
                         {stats.map((stat, idx) => (
                             <StaggerItem key={idx} className="text-center space-y-2">
                                 <Floating duration={3} distance={10} delay={idx * 0.2}>
@@ -162,8 +162,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-24 bg-gradient-to-br from-pink-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-gradient-to-br from-pink-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="max-w-3xl mb-16">
                         <h2 className="text-2xl md:text-4xl font-black mb-6 tracking-tight dark:text-white">
                             Empowering Your <span className="text-primary italic">Future</span>
@@ -182,10 +182,10 @@ const Home: React.FC = () => {
                                         scale: 1.02,
                                         transition: { duration: 0.3 }
                                     }}
-                                    className="group p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 hover:bg-primary dark:hover:bg-primary transition-all duration-500 border border-light-text/5 dark:border-white/5 tilt-effect"
+                                    className="group p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 hover:bg-primary dark:hover:bg-primary transition-all duration-500 border border-light-text/5 dark:border-white/5 tilt-effect h-full flex flex-col"
                                 >
                                     <motion.div
-                                        className="mb-6 p-4 rounded-2xl bg-gray-50 dark:bg-gray-900 text-primary group-hover:text-white group-hover:bg-black/20 transition-colors inline-block"
+                                        className="mb-6 text-primary group-hover:text-white transition-colors"
                                         whileHover={{ rotate: [0, -10, 10, 0] }}
                                         transition={{ duration: 0.5 }}
                                     >
@@ -203,8 +203,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Services Preview Section */}
-            <section className="py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             <span className="text-primary italic">Courses</span>
@@ -250,8 +250,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Internships Preview Section */}
-            <section className="py-20 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             <span className="text-primary italic">Internship</span> Opportunities
@@ -304,8 +304,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* About Preview Section */}
-            <section className="py-20 bg-gradient-to-br from-white via-pink-50 to-red-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-pink-50 to-red-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+                <div className="container mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <SlideIn direction="left">
                             <h2 className="text-3xl md:text-4xl font-black mb-6 dark:text-white">
@@ -384,8 +384,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Partners Section with Marquee */}
-            <section className="py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
                             Trusted by <span className="text-primary italic">Industry Leaders</span>
@@ -430,8 +430,8 @@ const Home: React.FC = () => {
             </section>
 
             {/* Final CTA Section */}
-            <section className="py-24 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn>
                         <motion.div
                             className="max-w-4xl mx-auto text-center bg-gradient-to-br from-primary/10 to-primary/5 dark:from-primary/20 dark:to-primary/10 rounded-[40px] p-12 md:p-16 border border-primary/20 relative overflow-hidden"

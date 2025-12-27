@@ -24,10 +24,10 @@ const Internships: React.FC = () => {
     return (
         <div className="pt-24 min-h-screen overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
             {/* Hero Section */}
-            <section className="py-20 bg-gradient-to-br from-primary/5 to-transparent relative overflow-hidden">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-primary/5 to-transparent relative overflow-hidden">
                 <FloatingOrbs orbCount={3} />
 
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ const Internships: React.FC = () => {
                             </Floating>
                         </motion.span>
 
-                        <h1 className="text-3xl md:text-5xl font-black mb-6 tracking-tight dark:text-white">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 tracking-tight dark:text-white">
                             Launch Your Career with{' '}
                             <motion.span
                                 className="text-primary italic inline-block"
@@ -61,12 +61,12 @@ const Internships: React.FC = () => {
                                 Edutalks
                             </motion.span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
                             Gain real-world experience, build your portfolio, and work with cutting-edge technologies through our premium internship program.
                         </p>
 
                         <motion.div
-                            className="flex flex-wrap justify-center gap-4"
+                            className="flex flex-col sm:flex-row flex-wrap justify-center gap-4"
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
@@ -74,7 +74,7 @@ const Internships: React.FC = () => {
                             <Magnetic>
                                 <a
                                     href="/careers"
-                                    className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20"
+                                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20"
                                 >
                                     View Open Positions <ArrowRight size={20} />
                                 </a>
@@ -82,7 +82,7 @@ const Internships: React.FC = () => {
                         </motion.div>
 
                         {/* Quick stats */}
-                        <StaggerContainer staggerDelay={0.1} className="flex flex-wrap justify-center gap-8 mt-16 md:mt-20">
+                        <StaggerContainer staggerDelay={0.1} className="flex flex-wrap justify-center gap-4 sm:gap-8 mt-12 sm:mt-16 md:mt-20">
                             {[
                                 { value: 500, suffix: '+', label: 'Interns Placed' },
                                 { value: 50, suffix: '+', label: 'Partner Companies' },
@@ -103,18 +103,18 @@ const Internships: React.FC = () => {
             </section>
 
             {/* Benefits Section */}
-            <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-500">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-white dark:bg-gray-900 transition-colors duration-500">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
+                        <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Why Intern at <span className="text-primary italic">Edutalks?</span>
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                             Join our program and get hands-on experience that prepares you for the real world
                         </p>
                     </FadeIn>
 
-                    <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <StaggerContainer staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                         {benefits.map((benefit, idx) => (
                             <StaggerItem key={idx}>
                                 <motion.div
@@ -138,13 +138,13 @@ const Internships: React.FC = () => {
             </section>
 
             {/* Redirect CTA - Replaces the detailed positions list */}
-            <section className="py-24 relative overflow-hidden">
+            <section className="py-12 sm:py-24 relative overflow-hidden">
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent" />
 
-                <div className="container mx-auto px-6">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn>
                         <motion.div
-                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white rounded-[2.5rem] p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-red-500/30"
+                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white rounded-[2.5rem] p-8 sm:p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-red-500/30"
                             whileHover={{ scale: 1.01 }}
                             transition={{ duration: 0.5 }}
                         >
@@ -156,16 +156,16 @@ const Internships: React.FC = () => {
                                 <span className="inline-block p-4 bg-white/10 backdrop-blur-md rounded-2xl mb-8">
                                     <Briefcase size={40} className="text-white" />
                                 </span>
-                                <h2 className="text-2xl md:text-4xl font-black mb-6 leading-tight text-white">
+                                <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 sm:mb-6 leading-tight text-white">
                                     Looking for Open Roles?
                                 </h2>
-                                <p className="text-xl text-red-100 mb-10 max-w-2xl mx-auto font-medium">
+                                <p className="text-base sm:text-lg md:text-xl text-red-100 mb-8 sm:mb-10 max-w-2xl mx-auto font-medium">
                                     We manage all our internship and full-time openings centrally. Visit our Careers page to find the perfect role for you.
                                 </p>
                                 <Magnetic>
                                     <a
                                         href="/careers"
-                                        className="inline-flex items-center gap-3 px-10 py-5 bg-white text-red-600 font-bold text-lg rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1"
+                                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-white text-red-600 font-bold text-base sm:text-lg rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1"
                                     >
                                         Search Openings <ArrowRight size={22} />
                                     </a>
@@ -177,18 +177,18 @@ const Internships: React.FC = () => {
             </section>
 
             {/* Application Process */}
-            <section className="py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-gray-50 dark:bg-gray-900 transition-colors duration-500">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
+                        <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Application <span className="text-primary italic">Process</span>
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                             Simple steps to start your journey with us
                         </p>
                     </FadeIn>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto relative">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto relative">
                         {/* Connection line (Desktop only) */}
                         <motion.div
                             className="hidden md:block absolute top-20 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-primary/20 via-primary/50 to-primary/20"

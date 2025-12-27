@@ -84,11 +84,11 @@ const About: React.FC = () => {
     return (
         <div className="pt-24 min-h-screen overflow-hidden">
             {/* Hero - Our Story */}
-            <section className="py-20 relative">
+            <section className="py-12 sm:py-20 relative">
                 <FloatingOrbs orbCount={3} />
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 items-center">
                         <SlideIn direction="left">
                             <motion.span
                                 className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-bold mb-6"
@@ -98,7 +98,7 @@ const About: React.FC = () => {
                             >
                                 Our Story
                             </motion.span>
-                            <h1 className="text-3xl md:text-5xl font-black mb-8 leading-tight dark:text-white">
+                            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 sm:mb-8 leading-tight dark:text-white">
                                 Where{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -115,13 +115,13 @@ const About: React.FC = () => {
                                 </motion.span>
                                 {' '}Meets Purpose
                             </h1>
-                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                                 Edutalks is a next-generation learning platform focused on delivering industry-relevant **Information Technology (IT) courses**. Our programs are designed to help students, graduates, and professionals build practical skills aligned with current and future tech careers.
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6">
+                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                                 Founded in 2024, Edutalks Learning Pvt. Ltd. was born out of a simple realization: education should be a conversation, not a monologue. We aim to bridge the gap between traditional learning and industry requirements.
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                 By combining expert mentorship with practical skill development, we empower students and professionals to take charge of their careers and lead with confidence.
                             </p>
                         </SlideIn>
@@ -158,9 +158,9 @@ const About: React.FC = () => {
             </section>
 
             {/* Quick Stats */}
-            <section className="py-16 bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-white">
-                <div className="container mx-auto px-6">
-                    <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <section className="py-12 sm:py-16 bg-gradient-to-r from-red-600 via-red-400 to-red-600 text-white">
+                <div className="container mx-auto px-4 sm:px-6">
+                    <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
                         {[
                             { value: 10000, suffix: '+', label: 'Students Trained' },
                             { value: 500, suffix: '+', label: 'Expert Mentors' },
@@ -168,11 +168,11 @@ const About: React.FC = () => {
                             { value: 95, suffix: '%', label: 'Success Rate' }
                         ].map((stat, idx) => (
                             <StaggerItem key={idx}>
-                                <div className="p-4">
-                                    <div className="text-4xl md:text-5xl font-black mb-2">
+                                <div className="p-2 sm:p-4">
+                                    <div className="text-3xl sm:text-4xl md:text-5xl font-black mb-2">
                                         <CountUp end={stat.value} suffix={stat.suffix} duration={2} delay={idx * 0.1} />
                                     </div>
-                                    <p className="text-white/80 font-medium">{stat.label}</p>
+                                    <p className="text-white/80 font-medium text-sm sm:text-base">{stat.label}</p>
                                 </div>
                             </StaggerItem>
                         ))}
@@ -181,27 +181,27 @@ const About: React.FC = () => {
             </section>
 
             {/* Mission & Vision */}
-            <section className="py-24 bg-white dark:bg-gray-900">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-white dark:bg-gray-900">
+                <div className="container mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <FadeIn>
-                            <div className="p-10 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 h-full hover:shadow-2xl transition-all">
+                            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 h-full hover:shadow-2xl transition-all">
                                 <div className="mb-6 p-4 bg-primary/10 text-primary rounded-2xl inline-block">
                                     <Target size={32} />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4 dark:text-white">Our Mission</h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                                <h3 className="text-2xl sm:text-3xl font-black mb-4 dark:text-white">Our Mission</h3>
+                                <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                     To democratize quality education and career opportunities through interactive learning and expert-led mentorship programs. We believe every individual deserves access to world-class education regardless of their background.
                                 </p>
                             </div>
                         </FadeIn>
                         <FadeIn delay={0.2}>
-                            <div className="p-10 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 h-full hover:shadow-2xl transition-all">
+                            <div className="p-6 sm:p-10 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 h-full hover:shadow-2xl transition-all">
                                 <div className="mb-6 p-4 bg-primary/10 text-primary rounded-2xl inline-block">
                                     <Eye size={32} />
                                 </div>
-                                <h3 className="text-3xl font-black mb-4 dark:text-white">Our Vision</h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
+                                <h3 className="text-2xl sm:text-3xl font-black mb-4 dark:text-white">Our Vision</h3>
+                                <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                     To become the world's most trusted EdTech platform for practical skill development and professional growth. We envision a future where education truly prepares individuals for real-world challenges.
                                 </p>
                             </div>
@@ -211,20 +211,20 @@ const About: React.FC = () => {
             </section>
 
             {/* Team Members Section */}
-            <section className="py-24 bg-gray-50 dark:bg-gray-800">
-                <div className="container mx-auto px-6">
+            <section className="py-12 sm:py-24 bg-gray-50 dark:bg-gray-800">
+                <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-black mb-4 dark:text-white">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 dark:text-white">
                             Meet Our <span className="text-primary italic">Team</span>
                         </h2>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                             Passionate educators and industry experts dedicated to your success
                         </p>
                     </FadeIn>
 
                     <AnimatePresence mode="wait">
                         {!isLoading ? (
-                            <StaggerContainer key="team-grid" staggerDelay={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            <StaggerContainer key="team-grid" staggerDelay={0.15} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
                                 {teamMembers.map((member, index) => (
                                     <StaggerItem key={member.id}>
                                         <TeamMember member={member} index={index} />
@@ -241,19 +241,19 @@ const About: React.FC = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white relative overflow-hidden">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                <div className="container mx-auto px-6 relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 relative z-10">
                     <FadeIn className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
                             Ready to Join Our Community?
                         </h2>
-                        <p className="text-xl text-white/90 mb-8">
+                        <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8">
                             Start your learning journey today and build your future.
                         </p>
                         <a
                             href="/contact"
-                            className="inline-block px-10 py-5 bg-white text-red-600 font-bold rounded-full hover:shadow-2xl transition-all transform hover:scale-105"
+                            className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-white text-red-600 font-bold rounded-full hover:shadow-2xl transition-all transform hover:scale-105 text-sm sm:text-base"
                         >
                             Get Started
                         </a>
