@@ -5,7 +5,7 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoLight from '../assets/edutalks-logo-light.svg';
 
-import { Magnetic, StaggerContainer, StaggerItem } from './animations';
+import { StaggerContainer, StaggerItem } from './animations';
 
 const Navbar: React.FC = () => {
     // const { theme } = useTheme(); // theme is no longer needed since navbar is always white
@@ -28,19 +28,17 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/90 dark:bg-white/90 backdrop-blur-md py-3 shadow-lg border-b border-gray-200 dark:border-gray-300"
+            className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/90 dark:bg-white/90 backdrop-blur-md py-1.5 shadow-lg border border-gray-200 dark:border-gray-300 rounded-2xl"
         >
             <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
                 {/* Logo */}
-                <Magnetic strength={0.2}>
-                    <Link to="/" className="flex items-center group relative z-50">
-                        <img
-                            src={logoLight}
-                            alt="EduTalks Logo"
-                            className="h-8 sm:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-                        />
-                    </Link>
-                </Magnetic>
+                <Link to="/" className="flex items-center relative z-50">
+                    <img
+                        src={logoLight}
+                        alt="EduTalks Logo"
+                        className="h-5 sm:h-7 w-auto pointer-events-none"
+                    />
+                </Link>
 
                 {/* Desktop Links */}
                 <div className="hidden md:flex items-center gap-4 lg:gap-8">
@@ -93,7 +91,7 @@ const Navbar: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: '100vh' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed inset-0 bg-white dark:bg-gray-900 z-40 flex flex-col items-center justify-center pt-20 px-6"
+                        className="fixed inset-0 bg-white dark:bg-gray-900 z-40 flex flex-col items-center justify-center pt-12 px-6"
                     >
                         <StaggerContainer className="flex flex-col items-center gap-6 sm:gap-8 text-center w-full">
                             {navLinks.map((link) => (
