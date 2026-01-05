@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import logoLight from '../assets/edutalks-logo-light.svg';
+import logoDark from '../assets/edutalks-logo-dark.svg';
 
 import { StaggerContainer, StaggerItem } from './animations';
 
@@ -28,15 +28,15 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/90 dark:bg-white/90 backdrop-blur-md py-1.5 shadow-lg border border-gray-200 dark:border-gray-300 rounded-2xl"
+            className={`absolute top-0 left-0 w-full z-50 py-0 transition-colors duration-300 ${location.pathname === '/' ? 'bg-transparent' : 'bg-[#0F0F23] shadow-md'}`}
         >
             <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center relative z-50">
                     <img
-                        src={logoLight}
+                        src={logoDark}
                         alt="EduTalks Logo"
-                        className="h-5 sm:h-7 w-auto pointer-events-none"
+                        className="h-0.5 sm:h-1.5 w-auto pointer-events-none"
                     />
                 </Link>
 
@@ -46,9 +46,9 @@ const Navbar: React.FC = () => {
                         <div key={link.path} className="relative">
                             <Link
                                 to={link.path}
-                                className={`text-sm font-bold transition-colors ${location.pathname === link.path
+                                className={`text-sm font-bold transition-colors !min-h-0 !min-w-0 py-0.5 ${location.pathname === link.path
                                     ? 'text-primary'
-                                    : 'text-gray-800 hover:text-primary'
+                                    : 'text-gray-300 hover:text-white'
                                     }`}
                             >
                                 {link.name}
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
                 <div className="md:hidden flex items-center gap-4 relative z-50">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="text-gray-800"
+                        className="text-white"
                     >
                         <AnimatePresence mode="wait">
                             <motion.div
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: '100vh' }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="fixed inset-0 bg-white dark:bg-gray-900 z-40 flex flex-col items-center justify-center pt-12 px-6"
+                        className="fixed inset-0 bg-[#0F0F23] z-40 flex flex-col items-center justify-center pt-12 px-6"
                     >
                         <StaggerContainer className="flex flex-col items-center gap-6 sm:gap-8 text-center w-full">
                             {navLinks.map((link) => (
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className={`text-2xl sm:text-3xl font-black ${location.pathname === link.path
                                             ? 'text-primary'
-                                            : 'text-gray-800 dark:text-white'
+                                            : 'text-white'
                                             } `}
                                     >
                                         {link.name}
