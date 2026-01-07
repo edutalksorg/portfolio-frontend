@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
                         {/* RIGHT FORM */}
                         <SlideIn direction="right" delay={0.2}>
                             <motion.div
-                                className="bg-white dark:bg-gray-900 p-6 sm:p-10 md:p-12 rounded-[40px] border border-gray-200 dark:border-white/10 shadow-2xl relative overflow-hidden"
+                                className="bg-[var(--card)] p-6 sm:p-10 md:p-12 rounded-[40px] border border-[var(--border)] shadow-2xl relative overflow-hidden"
                                 whileHover={{ scale: 1.01 }}
                                 transition={{ duration: 0.3 }}
                             >
@@ -189,12 +189,12 @@ const Contact: React.FC = () => {
                                 <AnimatePresence mode="wait">
                                     {formState === 'error' && (
                                         <motion.div
-                                            className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl"
+                                            className="mb-6 p-4 bg-[var(--error)]/10 border border-[var(--error)]/20 rounded-2xl"
                                             initial={{ opacity: 0, y: -10 }}
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -10 }}
                                         >
-                                            <p className="text-red-600 dark:text-red-400 text-sm">
+                                            <p className="text-[var(--error)] text-sm font-medium">
                                                 {errorMessage}
                                             </p>
                                         </motion.div>
@@ -203,9 +203,20 @@ const Contact: React.FC = () => {
 
                                 <AnimatePresence mode="wait">
                                     {formState === 'success' ? (
-                                        <>
-                                            {/* SUCCESS UI unchanged */}
-                                        </>
+                                        <motion.div
+                                            key="success"
+                                            className="text-center py-12"
+                                            initial={{ opacity: 0, scale: 0.9 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                        >
+                                            <div className="w-20 h-20 bg-[var(--success)]/10 text-[var(--success)] rounded-full flex items-center justify-center mx-auto mb-6">
+                                                <Send size={40} />
+                                            </div>
+                                            <h3 className="text-2xl font-bold mb-4 text-[var(--text-primary)]">Message Sent!</h3>
+                                            <p className="text-[var(--text-muted)]">
+                                                Thank you for reaching out. We'll get back to you shortly.
+                                            </p>
+                                        </motion.div>
                                     ) : (
                                         <motion.form
                                             onSubmit={handleSubmit}
@@ -219,7 +230,7 @@ const Contact: React.FC = () => {
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
                                                 <motion.div className="space-y-2">
-                                                    <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-gray-700 dark:text-white">
+                                                    <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-[var(--text-primary)]">
                                                         Full Name
                                                     </motion.label>
 
@@ -227,14 +238,15 @@ const Contact: React.FC = () => {
                                                         required
                                                         type="text"
                                                         name="name"
+                                                        placeholder="John Doe"
                                                         value={formData.name}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     />
                                                 </motion.div>
 
                                                 <motion.div className="space-y-2">
-                                                    <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-gray-700 dark:text-white">
+                                                    <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-[var(--text-primary)]">
                                                         Email Address
                                                     </motion.label>
 
@@ -242,41 +254,44 @@ const Contact: React.FC = () => {
                                                         required
                                                         type="email"
                                                         name="email"
+                                                        placeholder="john@example.com"
                                                         value={formData.email}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                        className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                     />
                                                 </motion.div>
                                             </div>
 
                                             {/* PHONE */}
                                             <motion.div className="space-y-2">
-                                                <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-gray-700 dark:text-white">
+                                                <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-[var(--text-primary)]">
                                                     Phone Number
                                                 </motion.label>
 
                                                 <input
                                                     type="tel"
                                                     name="phone"
+                                                    placeholder="+91 98765 43210"
                                                     value={formData.phone}
                                                     onChange={handleChange}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                                                 />
                                             </motion.div>
 
                                             {/* MESSAGE */}
                                             <motion.div className="space-y-2">
-                                                <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-gray-700 dark:text-white">
+                                                <motion.label className="text-sm font-bold ml-1 uppercase tracking-wider text-[var(--text-primary)]">
                                                     Your Message
                                                 </motion.label>
 
                                                 <textarea
                                                     required
                                                     name="message"
+                                                    placeholder="How can we help you?"
                                                     value={formData.message}
                                                     onChange={handleChange}
                                                     rows={5}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                                                    className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
                                                 />
                                             </motion.div>
 
@@ -284,7 +299,7 @@ const Contact: React.FC = () => {
                                             <Magnetic strength={0.1}>
                                                 <motion.button
                                                     disabled={formState === 'submitting'}
-                                                    className="w-full py-5 bg-primary text-white font-black rounded-2xl hover:bg-primary-dark transition-all flex items-center justify-center gap-3 disabled:opacity-50"
+                                                    className="w-full py-5 bg-[var(--primary)] text-white font-black rounded-2xl hover:opacity-90 transition-all flex items-center justify-center gap-3 disabled:opacity-50"
                                                 >
                                                     {formState === 'submitting' ? (
                                                         <>

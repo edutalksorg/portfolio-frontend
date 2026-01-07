@@ -79,51 +79,31 @@ object {
   /* ===== ULTRA-ATTRACTIVE COLOR SYSTEM ===== */
 
   /* Light Mode Colors */
-  --color-light-bg: #FFFFFF;
-  /* Pure White */
+  --color-light-bg: #F9FAFB;
   --color-light-primary: #DC2626;
-  /* Vibrant Red */
-  --color-light-secondary: #1A1A2E;
-  /* Deep Navy */
+  --color-light-secondary: #1F2937;
   --color-light-accent: #EF4444;
-  /* Bright Red */
   --color-light-card: #FFFFFF;
-  --color-light-text-primary: #0A0A0F;
-  /* Deep Black */
+  --color-light-text-primary: #1F2937;
   --color-light-text-muted: #6B7280;
-  /* Gray */
   --color-light-border: #E5E7EB;
-  /* Light Gray Border */
-  --color-light-success: #10B981;
-  /* Green */
+  --color-light-success: #059669;
   --color-light-warning: #F59E0B;
-  /* Amber */
   --color-light-error: #DC2626;
-  /* Red */
 
   /* Dark Mode Colors */
-  --color-dark-bg: #0F0F23;
-  /* Deep Purple Black */
+  --color-dark-bg: #111827;
   --color-dark-primary: #00F0FF;
-  /* Electric Cyan */
-  --color-dark-secondary: #E8E8F0;
-  /* Soft White */
+  --color-dark-secondary: #E5E7EB;
   --color-dark-accent: #FF0080;
-  /* Neon Pink */
-  --color-dark-card: #1A1A35;
-  /* Rich Purple Card */
-  --color-dark-text-primary: #FAFAFF;
-  /* Pure White */
-  --color-dark-text-muted: #A0A0B8;
-  /* Soft Gray */
-  --color-dark-border: #2A2A45;
-  /* Purple Border */
-  --color-dark-success: #00FFB3;
-  /* Bright Mint */
+  --color-dark-card: #1F2937;
+  --color-dark-text-primary: #F3F4F6;
+  --color-dark-text-muted: #9CA3AF;
+  --color-dark-border: #374151;
+  --color-dark-success: #34D399;
   --color-dark-warning: #FFD000;
-  /* Bright Yellow */
-  --color-dark-error: #FF4D6D;
-  /* Coral Red */
+  --color-dark-error: #F87171;
+  --color-border: var(--border);
   --color-border: var(--border);
 
   /* Animation Durations */
@@ -324,9 +304,7 @@ object {
 @layer base {
 
   /* ===== ROOT THEME VARIABLES ===== */
-  /* Force light mode colors always - no dark mode switching */
-  :root,
-  :root.dark {
+  :root {
     --bg: var(--color-light-bg);
     --primary: var(--color-light-primary);
     --secondary: var(--color-light-secondary);
@@ -335,6 +313,21 @@ object {
     --text-primary: var(--color-light-text-primary);
     --text-muted: var(--color-light-text-muted);
     --border: var(--color-light-border);
+    --error: var(--color-light-error);
+    --success: var(--color-light-success);
+  }
+
+  .dark {
+    --bg: var(--color-dark-bg);
+    --primary: var(--color-dark-primary);
+    --secondary: var(--color-dark-secondary);
+    --accent: var(--color-dark-accent);
+    --card: var(--color-dark-card);
+    --text-primary: var(--color-dark-text-primary);
+    --text-muted: var(--color-dark-text-muted);
+    --border: var(--color-dark-border);
+    --error: var(--color-dark-error);
+    --success: var(--color-dark-success);
   }
 
   /* ===== GLOBAL STYLES ===== */
@@ -420,22 +413,38 @@ object {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   }
 
-  /* Enforce legible input text colors in dark mode */
+  /* Enforce legible input text colors */
   input,
   textarea,
   select {
-    /* default to black text for light mode */
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
+    color: var(--text-primary) !important;
+    background-color: transparent;
   }
 
-  /* Strongly enforce white text and readable placeholders when .dark is active */
-  .dark input,
-  .dark textarea,
-  .dark select {
-    color: var(--color-dark-text-primary) !important;
-    -webkit-text-fill-color: var(--color-dark-text-primary) !important;
-    /* Safari/Chrome */
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  /* Interaction States */
+  input:focus,
+  textarea:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+
+  /* Disabled States */
+  input:disabled,
+  textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: var(--color-light-border);
+  }
+
+  .dark input:disabled,
+  .dark textarea:disabled {
+    background-color: var(--color-dark-border);
   }
 
 
