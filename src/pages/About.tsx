@@ -115,13 +115,13 @@ const About: React.FC = () => {
                                 </motion.span>
                                 {' '}Meets Purpose
                             </h1>
-                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                            <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                                 Edutalks is a next-generation learning platform focused on delivering industry-relevant **Information Technology (IT) courses**. Our programs are designed to help students, graduates, and professionals build practical skills aligned with current and future tech careers.
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                            <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
                                 Founded in 2024, Edutalks Learning Pvt. Ltd. was born out of a simple realization: education should be a conversation, not a monologue. We aim to bridge the gap between traditional learning and industry requirements.
                             </p>
-                            <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                            <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                 By combining expert mentorship with practical skill development, we empower students and professionals to take charge of their careers and lead with confidence.
                             </p>
                         </SlideIn>
@@ -190,7 +190,7 @@ const About: React.FC = () => {
                                     <Target size={32} />
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl font-black mb-4 dark:text-white">Our Mission</h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                                <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                     To democratize quality education and career opportunities through interactive learning and expert-led mentorship programs. We believe every individual deserves access to world-class education regardless of their background.
                                 </p>
                             </div>
@@ -201,7 +201,7 @@ const About: React.FC = () => {
                                     <Eye size={32} />
                                 </div>
                                 <h3 className="text-2xl sm:text-3xl font-black mb-4 dark:text-white">Our Vision</h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                                <p className="text-black dark:text-gray-400 text-base sm:text-lg leading-relaxed">
                                     To become the world's most trusted EdTech platform for practical skill development and professional growth. We envision a future where education truly prepares individuals for real-world challenges.
                                 </p>
                             </div>
@@ -217,7 +217,7 @@ const About: React.FC = () => {
                         <h2 className="text-2xl sm:text-3xl md:text-5xl font-black mb-4 dark:text-white">
                             Meet Our <span className="text-primary italic">Team</span>
                         </h2>
-                        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-lg sm:text-xl text-black dark:text-gray-400 max-w-2xl mx-auto">
                             Passionate educators and industry experts dedicated to your success
                         </p>
                     </FadeIn>
@@ -253,7 +253,8 @@ const About: React.FC = () => {
                         </p>
                         <a
                             href="/contact"
-                            className="inline-block px-8 sm:px-10 py-4 sm:py-5 bg-white text-red-600 font-bold rounded-full hover:shadow-2xl transition-all transform hover:scale-105 text-sm sm:text-base"
+                            style={{ backgroundColor: 'white', color: '#dc2626' }}
+                            className="inline-block px-8 sm:px-10 py-4 sm:py-5 font-bold rounded-full hover:shadow-2xl transition-all transform hover:scale-105 text-sm sm:text-base"
                         >
                             Get Started
                         </a>

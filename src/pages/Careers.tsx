@@ -88,7 +88,7 @@ const Careers: React.FC = () => {
                                 Education
                             </motion.span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                        <p className="text-xl text-black dark:text-gray-400 mb-8">
                             Join our mission to democratize quality education and empower millions of learners worldwide.
                         </p>
 
@@ -117,7 +117,7 @@ const Careers: React.FC = () => {
                         <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Why Work at <span className="text-primary italic">Edutalks?</span>
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-lg text-black dark:text-gray-400 max-w-2xl mx-auto">
                             We believe in creating an environment where you can thrive and make an impact
                         </p>
                     </FadeIn>
@@ -137,7 +137,7 @@ const Careers: React.FC = () => {
                                         {value.icon}
                                     </motion.div>
                                     <h3 className="text-xl font-bold mb-2 dark:text-white">{value.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400">{value.description}</p>
+                                    <p className="text-black dark:text-gray-400">{value.description}</p>
                                 </motion.div>
                             </StaggerItem>
                         ))}
@@ -152,7 +152,7 @@ const Careers: React.FC = () => {
                         <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Open <span className="text-primary italic">Positions</span>
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-lg text-black dark:text-gray-400 max-w-2xl mx-auto">
                             Find your next opportunity and join our growing team
                         </p>
                     </FadeIn>
@@ -166,7 +166,7 @@ const Careers: React.FC = () => {
                                 exit={{ opacity: 0 }}
                             >
                                 <Loader2 className="w-12 h-12 text-primary animate-spin mx-auto" />
-                                <p className="mt-4 text-gray-600 dark:text-gray-400">Loading positions...</p>
+                                <p className="mt-4 text-black dark:text-gray-400">Loading positions...</p>
                             </motion.div>
                         ) : jobs.length > 0 ? (
                             <motion.div
@@ -198,7 +198,7 @@ const Careers: React.FC = () => {
                                                         {job.type}
                                                     </motion.span>
                                                 </div>
-                                                <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mb-3">
+                                                <div className="flex flex-wrap gap-4 text-sm text-black dark:text-gray-400 mb-3">
                                                     <span className="flex items-center gap-1">
                                                         <Users size={16} className="text-primary" />
                                                         {job.department}
@@ -208,7 +208,7 @@ const Careers: React.FC = () => {
                                                         {job.location}
                                                     </span>
                                                 </div>
-                                                <p className="text-gray-600 dark:text-gray-400">{job.description}</p>
+                                                <p className="text-black dark:text-gray-400">{job.description}</p>
                                             </div>
                                             <Magnetic strength={0.15}>
                                                 <motion.a
@@ -231,7 +231,7 @@ const Careers: React.FC = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                             >
                                 <Briefcase className="w-16 h-16 text-gray-300 dark:text-gray-600 mx-auto mb-4" />
-                                <p className="text-gray-600 dark:text-gray-400 text-lg mb-4">
+                                <p className="text-black dark:text-gray-400 text-lg mb-4">
                                     No open positions at the moment.
                                 </p>
                                 <p className="text-gray-500 dark:text-gray-500">
@@ -242,7 +242,7 @@ const Careers: React.FC = () => {
                     </AnimatePresence>
 
                     <FadeIn delay={0.3} className="text-center mt-12">
-                        <p className="text-gray-600 dark:text-gray-400 mb-4">
+                        <p className="text-black dark:text-gray-400 mb-4">
                             Don't see a perfect fit? We're always looking for talented individuals.
                         </p>
                         <Magnetic>

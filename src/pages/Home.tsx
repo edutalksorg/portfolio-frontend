@@ -110,10 +110,10 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 items-center px-4"
+                        className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 items-center px-4"
                     >
                         <Magnetic strength={0.2}>
-                            <a href="/products" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-white text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
+                            <a href="/products" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
                                 Products <ShoppingBag size={16} />
                             </a>
                         </Magnetic>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
             </motion.section>
 
             {/* Stats Section */}
-            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-pink-50 to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 border-y border-red-100 dark:border-gray-700">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-y border-[var(--border)]">
                 <div className="container mx-auto px-4 sm:px-6">
                     <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
                         {stats.map((stat, idx) => (
@@ -162,7 +162,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Features Section */}
-            <section className="py-12 sm:py-24 bg-gradient-to-br from-pink-50 via-white to-red-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <section className="py-12 sm:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="max-w-3xl mb-16">
                         <h2 className="text-2xl md:text-4xl font-black mb-6 tracking-tight dark:text-white">
@@ -182,7 +182,7 @@ const Home: React.FC = () => {
                                         scale: 1.02,
                                         transition: { duration: 0.3 }
                                     }}
-                                    className="group p-8 rounded-3xl bg-gray-50 dark:bg-gray-900 hover:bg-primary dark:hover:bg-primary transition-all duration-500 border border-light-text/5 dark:border-white/5 tilt-effect h-full flex flex-col"
+                                    className="group p-8 rounded-3xl bg-[var(--card)] hover:bg-primary transition-all duration-500 border border-[var(--border)] tilt-effect h-full flex flex-col"
                                 >
                                     <motion.div
                                         className="mb-6 text-primary group-hover:text-white transition-colors"
@@ -203,7 +203,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Services Preview Section */}
-            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
@@ -227,7 +227,7 @@ const Home: React.FC = () => {
                                         borderColor: 'var(--primary)',
                                         boxShadow: '0 20px 40px -15px rgba(79, 70, 229, 0.2)'
                                     }}
-                                    className="p-6 bg-gray-50 dark:bg-gray-800 rounded-3xl border border-gray-200 dark:border-gray-700 transition-all h-full flex flex-col"
+                                    className="p-6 bg-[var(--card)] rounded-3xl border border-[var(--border)] transition-all h-full flex flex-col"
                                 >
                                     <h3 className="text-xl font-bold mb-3 dark:text-white">{course.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-400 flex-grow">{course.description}</p>
@@ -250,7 +250,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Internships Preview Section */}
-            <section className="py-12 sm:py-20 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
@@ -304,7 +304,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* About Preview Section */}
-            <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-pink-50 to-red-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                         <SlideIn direction="left">
@@ -384,7 +384,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Partners Section with Marquee */}
-            <section className="py-12 sm:py-20 bg-gradient-to-br from-red-50 via-white to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+            <section className="py-12 sm:py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn className="text-center mb-12">
                         <h2 className="text-3xl md:text-4xl font-black mb-4 dark:text-white">
@@ -407,7 +407,7 @@ const Home: React.FC = () => {
                                     <motion.div
                                         key={idx}
                                         whileHover={{ scale: 1.1 }}
-                                        className="flex items-center justify-center p-6 bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 min-w-[180px] shadow-sm hover:shadow-md transition-all"
+                                        className="flex items-center justify-center p-6 bg-[var(--card)] rounded-2xl border border-[var(--border)] min-w-[180px] shadow-sm hover:shadow-md transition-all"
                                     >
                                         <img
                                             src={partner.logo}
@@ -430,7 +430,7 @@ const Home: React.FC = () => {
             </section>
 
             {/* Final CTA Section */}
-            <section className="py-12 sm:py-24 bg-gradient-to-br from-pink-50 via-red-50 to-white dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
+            <section className="py-12 sm:py-24 bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800">
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn>
                         <motion.div
@@ -464,7 +464,7 @@ const Home: React.FC = () => {
                                         </a>
                                     </Magnetic>
                                     <Magnetic>
-                                        <a href="/contact" className="px-6 py-3 text-sm bg-white dark:bg-gray-800 text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary inline-block">
+                                        <a href="/contact" className="px-6 py-3 text-sm bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary inline-block">
                                             Contact Us
                                         </a>
                                     </Magnetic>

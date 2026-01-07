@@ -179,7 +179,7 @@ const Services: React.FC = () => {
                                 transition={{ duration: 2, repeat: Infinity }}
                             >Courses</motion.span>
                         </h1>
-                        <p className="text-xl text-gray-600 dark:text-gray-400">
+                        <p className="text-xl text-black dark:text-gray-400">
                             Comprehensive programs designed to transform your career through practical learning, expert mentorship, and real-world experience.
                         </p>
 
@@ -188,7 +188,7 @@ const Services: React.FC = () => {
                             {benefits.map((benefit, idx) => (
                                 <StaggerItem key={idx}>
                                     <motion.div
-                                        className="flex items-center gap-2 text-gray-600 dark:text-gray-400"
+                                        className="flex items-center gap-2 text-black dark:text-gray-400"
                                         whileHover={{ scale: 1.05, color: 'var(--primary)' }}
                                     >
                                         <span className="text-primary">{benefit.icon}</span>
@@ -226,7 +226,7 @@ const Services: React.FC = () => {
                                         <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors dark:text-white">
                                             {course.title}
                                         </h3>
-                                        <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                        <p className="text-black dark:text-gray-400 mb-6 leading-relaxed">
                                             {course.description}
                                         </p>
                                     </div>
@@ -261,7 +261,7 @@ const Services: React.FC = () => {
                         <h2 className="text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Our Learning <span className="text-primary italic">Process</span>
                         </h2>
-                        <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-lg text-black dark:text-gray-400 max-w-2xl mx-auto">
                             A structured approach to help you master new skills effectively
                         </p>
                     </FadeIn>
@@ -301,7 +301,7 @@ const Services: React.FC = () => {
                                     {item.step}
                                 </motion.div>
                                 <h4 className="text-xl font-bold mb-2 dark:text-white">{item.title}</h4>
-                                <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+                                <p className="text-black dark:text-gray-400">{item.desc}</p>
                             </motion.div>
                         ))}
                     </div>
@@ -405,7 +405,7 @@ const Services: React.FC = () => {
                                                 <CheckCircle size={40} />
                                             </div>
                                             <h3 className="text-3xl font-black mb-4 dark:text-white">Interest Received!</h3>
-                                            <p className="text-gray-600 dark:text-gray-400">Our success team will contact you shortly to discuss your journey in {selectedCourse.title}.</p>
+                                            <p className="text-black dark:text-gray-400">Our success team will contact you shortly to discuss your journey in {selectedCourse.title}.</p>
                                         </motion.div>
                                     ) : (
                                         <motion.div
@@ -416,7 +416,7 @@ const Services: React.FC = () => {
                                         >
                                             <div className="text-center mb-10">
                                                 <h3 className="text-3xl font-black mb-2 dark:text-white">Join the Future</h3>
-                                                <p className="text-gray-600 dark:text-gray-400">Fill in your details to begin your transformation.</p>
+                                                <p className="text-black dark:text-gray-400">Fill in your details to begin your transformation.</p>
                                             </div>
 
                                             <form onSubmit={handleSubmit} className="space-y-6">

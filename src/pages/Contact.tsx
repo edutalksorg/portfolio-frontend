@@ -74,8 +74,8 @@ const Contact: React.FC = () => {
         {
             icon: <Phone size={24} />,
             title: 'Call Us',
-            value: '+91 98765 43210',
-            href: 'tel:+919876543210'
+            value: '+91 96401 11233 / +91 95051 11233',
+            href: 'tel:+919640111233'
         },
         {
             icon: <Mail size={24} />,
@@ -104,7 +104,7 @@ const Contact: React.FC = () => {
                                 Get In Touch
                             </motion.span>
 
-                            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 sm:mb-8 leading-tight dark:text-white">
+                            <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 sm:mb-8 leading-tight text-[var(--text-primary)]">
                                 Let's{' '}
                                 <motion.span
                                     className="text-primary italic inline-block"
@@ -121,7 +121,7 @@ const Contact: React.FC = () => {
                                 </motion.span>
                             </h1>
 
-                            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-8 sm:mb-12 leading-relaxed">
+                            <p className="text-lg sm:text-xl text-[var(--text-muted)] mb-8 sm:mb-12 leading-relaxed">
                                 Have questions about our programs or want to partner with us?
                                 Reach out and our team will get back to you within 24 hours.
                             </p>
@@ -149,7 +149,7 @@ const Contact: React.FC = () => {
                                                 transition={{ duration: 0.2 }}
                                             >
                                                 <motion.div
-                                                    className="p-4 bg-white dark:bg-gray-900 rounded-2xl text-primary border border-gray-200 dark:border-white/10 shadow-lg group-hover:bg-primary group-hover:text-white transition-colors"
+                                                    className="p-4 bg-[var(--card)] rounded-2xl text-primary border border-[var(--border)] shadow-lg group-hover:bg-primary group-hover:text-white transition-colors"
                                                     whileHover={{ rotate: 10, scale: 1.1 }}
                                                     transition={{ duration: 0.2 }}
                                                 >
@@ -157,10 +157,10 @@ const Contact: React.FC = () => {
                                                 </motion.div>
 
                                                 <div>
-                                                    <h4 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors text-gray-900 dark:text-white">
+                                                    <h4 className="text-lg font-bold mb-1 group-hover:text-primary transition-colors text-[var(--text-primary)]">
                                                         {info.title}
                                                     </h4>
-                                                    <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">
+                                                    <p className="text-[var(--text-muted)] group-hover:text-[var(--text-primary)] transition-colors">
                                                         {info.value}
                                                     </p>
                                                 </div>
@@ -271,7 +271,7 @@ const Contact: React.FC = () => {
                                                 <input
                                                     type="tel"
                                                     name="phone"
-                                                    placeholder="+91 98765 43210"
+                                                    placeholder="+91 96401 11233"
                                                     value={formData.phone}
                                                     onChange={handleChange}
                                                     className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"

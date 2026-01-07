@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
-import { useTheme } from '../../context/ThemeContext';
+import { Menu, X } from 'lucide-react';
 
 export const EdTechNavbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const { theme, toggleTheme } = useTheme();
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -75,41 +74,8 @@ export const EdTechNavbar: React.FC = () => {
                         ))}
                     </div>
 
-                    {/* Theme Toggle & Mobile Menu Button */}
-                    <div className="flex items-center space-x-4">
-                        {/* Theme Toggle */}
-                        <motion.button
-                            onClick={toggleTheme}
-                            className="w-12 h-12 rounded-full bg-card border-2 border-default flex items-center justify-center hover-lift"
-                            whileTap={{ scale: 0.9 }}
-                            aria-label="Toggle theme"
-                        >
-                            <AnimatePresence mode="wait">
-                                {theme === 'dark' ? (
-                                    <motion.div
-                                        key="sun"
-                                        initial={{ rotate: -90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: 90, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <Sun className="w-5 h-5 text-[var(--primary)]" />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="moon"
-                                        initial={{ rotate: 90, opacity: 0 }}
-                                        animate={{ rotate: 0, opacity: 1 }}
-                                        exit={{ rotate: -90, opacity: 0 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <Moon className="w-5 h-5 text-[var(--primary)]" />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </motion.button>
-
-                        {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button */}
+                    <div className="flex items-center">
                         <motion.button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                             className="md:hidden w-12 h-12 rounded-full bg-card border-2 border-default flex items-center justify-center"

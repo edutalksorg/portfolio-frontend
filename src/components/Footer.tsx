@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
     const currentYear = new Date().getFullYear();
 
     return (
-        <footer className="bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-800 text-gray-900 dark:text-white pt-20 pb-10 overflow-hidden relative">
+        <footer className="bg-[var(--bg)] border-t border-[var(--border)] text-[var(--text-primary)] pt-20 pb-10 overflow-hidden relative">
             {/* Background embellishment */}
             <motion.div
                 className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-purple-500 to-blue-500"
@@ -25,10 +25,10 @@ const Footer: React.FC = () => {
                         <Link to="/" className="inline-block group">
                             <span className="text-2xl font-black tracking-tighter">
                                 <span className="text-primary">Edu</span>
-                                <span className="text-gray-900 dark:text-white">talks</span>
+                                <span className="text-[var(--text-primary)]">talks</span>
                             </span>
                         </Link>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-xs">
+                        <p className="text-[var(--text-muted)] text-sm leading-relaxed max-w-xs">
                             Where Education Meets Conversation. Empowering the next generation of professionals through innovation and mentorship.
                         </p>
                         <div className="flex gap-3">
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
                                         href={social.href}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="w-10 h-10 flex items-center justify-center bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-primary text-gray-600 dark:text-gray-400 hover:text-white transition-all transform hover:scale-110"
+                                        className="w-10 h-10 flex items-center justify-center bg-[var(--card)] rounded-full hover:bg-primary text-[var(--text-muted)] hover:text-white transition-all transform hover:scale-110"
                                     >
                                         {social.icon}
                                     </a>
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 
                     {/* Quick Links */}
                     <StaggerItem>
-                        <h4 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Quick Links</h4>
+                        <h4 className="text-lg font-bold mb-6 text-[var(--text-primary)]">Quick Links</h4>
                         <ul className="space-y-4">
                             {[
                                 { name: 'About Us', path: '/about' },
@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
                                 { name: 'Careers', path: '/careers' }
                             ].map((link, idx) => (
                                 <li key={idx}>
-                                    <Link to={link.path} className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors text-sm inline-flex items-center gap-2 group">
+                                    <Link to={link.path} className="text-[var(--text-muted)] hover:text-primary transition-colors text-sm inline-flex items-center gap-2 group">
                                         <motion.span
                                             className="w-0 h-0.5 bg-primary"
                                             whileHover={{ width: 10 }}
@@ -77,7 +77,7 @@ const Footer: React.FC = () => {
 
                     {/* Services */}
                     <StaggerItem>
-                        <h4 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Courses</h4>
+                        <h4 className="text-lg font-bold mb-6 text-[var(--text-primary)]">Courses</h4>
                         <ul className="space-y-4">
                             {[
                                 'Skill Development',
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
                                 'Corporate Training'
                             ].map((service, idx) => (
                                 <li key={idx}>
-                                    <Link to="/services" className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors text-sm inline-flex items-center gap-2 group">
+                                    <Link to="/services" className="text-[var(--text-muted)] hover:text-primary transition-colors text-sm inline-flex items-center gap-2 group">
                                         <span className="group-hover:translate-x-1 transition-transform">{service}</span>
                                     </Link>
                                 </li>
@@ -96,23 +96,23 @@ const Footer: React.FC = () => {
 
                     {/* Contact Info */}
                     <StaggerItem>
-                        <h4 className="text-lg font-bold mb-6 text-gray-900 dark:text-white">Contact Us</h4>
+                        <h4 className="text-lg font-bold mb-6 text-[var(--text-primary)]">Contact Us</h4>
                         <ul className="space-y-4">
-                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-400 group">
-                                <div className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <li className="flex gap-3 text-sm text-[var(--text-muted)] group">
+                                <div className="p-2 bg-[var(--card)] rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                     <MapPin size={16} />
                                 </div>
                                 <span className="flex-1 pt-1">Hyderabad, Telangana, India</span>
                             </li>
-                            <li className="flex gap-3 text-sm text-gray-600 dark:text-gray-400 group">
-                                <div className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <li className="flex gap-3 text-sm text-[var(--text-muted)] group">
+                                <div className="p-2 bg-[var(--card)] rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                     <Phone size={16} />
                                 </div>
-                                <span className="flex-1 pt-1">+91 98765 43210</span>
+                                <span className="flex-1 pt-1">+91 96401 11233 / +91 95051 11233</span>
                             </li>
                             <li className="group">
-                                <a href="mailto:contact@edutalksacademy.in" className="flex gap-3 text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white transition-colors">
-                                    <div className="p-2 bg-gray-200 dark:bg-gray-800 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                <a href="mailto:contact@edutalksacademy.in" className="flex gap-3 text-sm text-[var(--text-muted)] hover:text-primary transition-colors">
+                                    <div className="p-2 bg-[var(--card)] rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                                         <Mail size={16} />
                                     </div>
                                     <span className="flex-1 pt-1">contact@edutalksacademy.in</span>
@@ -122,13 +122,13 @@ const Footer: React.FC = () => {
                     </StaggerItem>
                 </StaggerContainer>
 
-                <div className="pt-8 border-t border-gray-300 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 dark:text-gray-500">
+                <div className="pt-8 border-t border-[var(--border)] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[var(--text-muted)]">
                     <p className="flex items-center gap-1">
                         © {currentYear} Edutalks Learning Pvt. Ltd. Made with <Heart size={12} className="text-red-500 fill-red-500" /> in India.
                     </p>
                     <div className="flex gap-6">
-                        <Link to="/privacy-policy" className="hover:text-primary dark:hover:text-white transition-colors">Privacy Policy</Link>
-                        <a href="#" className="hover:text-primary dark:hover:text-white transition-colors">Terms of Service</a>
+                        <Link to="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

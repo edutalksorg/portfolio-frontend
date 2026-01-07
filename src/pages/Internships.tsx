@@ -61,7 +61,7 @@ const Internships: React.FC = () => {
                                 Edutalks
                             </motion.span>
                         </h1>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg md:text-xl text-black dark:text-gray-400 mb-6 sm:mb-8 max-w-2xl mx-auto">
                             Gain real-world experience, build your portfolio, and work with cutting-edge technologies through our premium internship program.
                         </p>
 
@@ -93,7 +93,7 @@ const Internships: React.FC = () => {
                                         <div className="text-3xl font-black text-primary mb-1">
                                             <CountUp end={stat.value} suffix={stat.suffix} duration={2} delay={0.5 + idx * 0.2} />
                                         </div>
-                                        <p className="text-sm font-medium text-gray-600 dark:text-gray-400">{stat.label}</p>
+                                        <p className="text-sm font-medium text-black dark:text-gray-400">{stat.label}</p>
                                     </div>
                                 </StaggerItem>
                             ))}
@@ -109,7 +109,7 @@ const Internships: React.FC = () => {
                         <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Why Intern at <span className="text-primary italic">Edutalks?</span>
                         </h2>
-                        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-black dark:text-gray-400 max-w-2xl mx-auto">
                             Join our program and get hands-on experience that prepares you for the real world
                         </p>
                     </FadeIn>
@@ -129,7 +129,7 @@ const Internships: React.FC = () => {
                                         {benefit.icon}
                                     </motion.div>
                                     <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors dark:text-white">{benefit.title}</h3>
-                                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{benefit.description}</p>
+                                    <p className="text-black dark:text-gray-400 leading-relaxed">{benefit.description}</p>
                                 </motion.div>
                             </StaggerItem>
                         ))}
@@ -144,17 +144,19 @@ const Internships: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <FadeIn>
                         <motion.div
-                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-red-600 via-red-500 to-red-800 text-white rounded-[2.5rem] p-8 sm:p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-red-500/30"
+                            className="max-w-4xl mx-auto text-center bg-gradient-to-br from-red-600 via-red-500 to-red-600 text-white rounded-[2.5rem] p-8 sm:p-12 md:p-20 relative overflow-hidden shadow-2xl shadow-red-500/30"
                             whileHover={{ scale: 1.01 }}
                             transition={{ duration: 0.5 }}
                         >
                             {/* Decorative background circles */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-                            <div className="absolute bottom-0 left-0 w-64 h-64 bg-black/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+                            <div className="absolute top-0 right-0 w-64 h-64 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" style={{ backgroundColor: 'rgba(255, 255, 255, 0.1)' }} />
 
                             <div className="relative z-10">
-                                <span className="inline-block p-4 bg-white/10 backdrop-blur-md rounded-2xl mb-8">
-                                    <Briefcase size={40} className="text-white" />
+                                <span
+                                    className="inline-block p-4 backdrop-blur-md rounded-2xl mb-8"
+                                    style={{ backgroundColor: 'white' }}
+                                >
+                                    <Briefcase size={40} className="text-red-600" />
                                 </span>
                                 <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 sm:mb-6 leading-tight text-white">
                                     Looking for Open Roles?
@@ -165,7 +167,8 @@ const Internships: React.FC = () => {
                                 <Magnetic>
                                     <a
                                         href="/careers"
-                                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-white text-red-600 font-bold text-base sm:text-lg rounded-full hover:shadow-2xl hover:bg-gray-50 transition-all transform hover:-translate-y-1"
+                                        style={{ backgroundColor: 'white', color: '#dc2626' }}
+                                        className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 sm:px-10 py-4 sm:py-5 font-bold text-base sm:text-lg rounded-full hover:shadow-2xl transition-all transform hover:-translate-y-1"
                                     >
                                         Search Openings <ArrowRight size={22} />
                                     </a>
@@ -183,7 +186,7 @@ const Internships: React.FC = () => {
                         <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-4 dark:text-white">
                             Application <span className="text-primary italic">Process</span>
                         </h2>
-                        <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <p className="text-base sm:text-lg text-black dark:text-gray-400 max-w-2xl mx-auto">
                             Simple steps to start your journey with us
                         </p>
                     </FadeIn>
@@ -215,7 +218,7 @@ const Internships: React.FC = () => {
                                     {idx + 1}
                                 </motion.div>
                                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors dark:text-white">{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed max-w-[200px] mx-auto">{item.description}</p>
+                                <p className="text-black dark:text-gray-400 text-sm leading-relaxed max-w-[200px] mx-auto">{item.description}</p>
                             </motion.div>
                         ))}
                     </div>

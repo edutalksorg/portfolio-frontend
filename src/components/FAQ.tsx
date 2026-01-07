@@ -80,7 +80,7 @@ const FAQ: React.FC = () => {
     };
 
     return (
-        <section className="py-24 bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
+        <section className="py-24 bg-[var(--bg)] relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
                 <div className="absolute top-20 right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
@@ -110,7 +110,7 @@ const FAQ: React.FC = () => {
                                 placeholder="Search questions..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all shadow-sm"
+                                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-[var(--card)] border border-[var(--border)] focus:border-primary focus:ring-1 focus:ring-primary/10 outline-none transition-all shadow-sm"
                             />
                         </div>
                     </FadeIn>
@@ -125,7 +125,7 @@ const FAQ: React.FC = () => {
                                 whileTap={{ scale: 0.95 }}
                                 className={`px-6 py-2 rounded-full font-semibold transition-all shadow-sm ${selectedCategory === category
                                     ? 'bg-primary text-white shadow-primary/25 shadow-lg'
-                                    : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:border-primary hover:text-primary'
+                                    : 'bg-[var(--card)] text-[var(--text-muted)] border border-[var(--border)] hover:border-primary hover:text-primary'
                                     }`}
                             >
                                 {category}
@@ -144,9 +144,9 @@ const FAQ: React.FC = () => {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ delay: index * 0.05 }}
-                                        className={`bg-white dark:bg-gray-800 rounded-2xl border transition-all duration-300 overflow-hidden ${openId === faq.id
+                                        className={`bg-[var(--card)] rounded-2xl border transition-all duration-300 overflow-hidden ${openId === faq.id
                                             ? 'border-primary shadow-lg shadow-primary/5'
-                                            : 'border-gray-200 dark:border-gray-700 hover:border-primary/50'
+                                            : 'border-[var(--border)] hover:border-primary/50'
                                             }`}
                                     >
                                         <button
@@ -159,7 +159,7 @@ const FAQ: React.FC = () => {
                                                         {faq.category}
                                                     </span>
                                                 </div>
-                                                <h3 className={`text-lg font-bold transition-colors ${openId === faq.id ? 'text-primary' : 'text-gray-900 dark:text-white'
+                                                <h3 className={`text-lg font-bold transition-colors ${openId === faq.id ? 'text-primary' : 'text-[var(--text-primary)]'
                                                     }`}>
                                                     {faq.question}
                                                 </h3>
@@ -167,7 +167,7 @@ const FAQ: React.FC = () => {
                                             <motion.div
                                                 animate={{ rotate: openId === faq.id ? 180 : 0 }}
                                                 transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
-                                                className={`flex-shrink-0 p-2 rounded-full ${openId === faq.id ? 'bg-primary text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-500'
+                                                className={`flex-shrink-0 p-2 rounded-full ${openId === faq.id ? 'bg-primary text-white' : 'bg-[var(--card)] text-gray-500'
                                                     }`}
                                             >
                                                 <ChevronDown size={20} />
@@ -182,7 +182,7 @@ const FAQ: React.FC = () => {
                                                     exit={{ height: 0, opacity: 0 }}
                                                     transition={{ duration: 0.3, ease: "easeInOut" }}
                                                 >
-                                                    <div className="px-6 pb-6 pt-0 text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-100 dark:border-gray-700/50 mt-2">
+                                                    <div className="px-6 pb-6 pt-0 text-[var(--text-muted)] leading-relaxed border-t border-[var(--border)] mt-2">
                                                         <div className="pt-4">
                                                             {faq.answer}
                                                         </div>
@@ -198,7 +198,7 @@ const FAQ: React.FC = () => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                 >
-                                    <div className="w-16 h-16 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400">
+                                    <div className="w-16 h-16 bg-[var(--card)] rounded-full flex items-center justify-center mx-auto mb-4 text-gray-400">
                                         <Search size={32} />
                                     </div>
                                     <p className="text-gray-500 dark:text-gray-400 text-lg">
@@ -217,7 +217,7 @@ const FAQ: React.FC = () => {
 
                     {/* Still Have Questions CTA */}
                     <FadeIn delay={0.1}>
-                        <div className="mt-12 text-center p-10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-800/50 rounded-[32px] border border-gray-200 dark:border-gray-700 shadow-xl relative overflow-hidden group">
+                        <div className="mt-12 text-center p-10 bg-gradient-to-br from-[var(--card)] to-[var(--bg)] rounded-[32px] border border-[var(--border)] shadow-xl relative overflow-hidden group">
                             <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <h3 className="text-2xl font-bold mb-3 relative z-10 dark:text-white">Still have questions?</h3>

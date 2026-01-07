@@ -305,29 +305,49 @@ object {
 
   /* ===== ROOT THEME VARIABLES ===== */
   :root {
-    --bg: var(--color-light-bg);
-    --primary: var(--color-light-primary);
-    --secondary: var(--color-light-secondary);
-    --accent: var(--color-light-accent);
-    --card: var(--color-light-card);
-    --text-primary: var(--color-light-text-primary);
-    --text-muted: var(--color-light-text-muted);
-    --border: var(--color-light-border);
-    --error: var(--color-light-error);
-    --success: var(--color-light-success);
+    --bg: #0f172a;
+    /* Fixed dark background */
+    --primary: #FF3131;
+    /* Dark mode primary */
+    --secondary: #E5E7EB;
+    /* Dark mode secondary */
+    --accent: #FF0080;
+    /* Dark mode accent */
+    --card: #1F2937;
+    /* Dark mode card */
+    --text-primary: #F3F4F6;
+    /* Dark mode text - light gray/white */
+    --text-muted: #9CA3AF;
+    /* Dark mode muted text */
+    --border: #374151;
+    /* Dark mode border */
+    --error: #F87171;
+    /* Dark mode error */
+    --success: #34D399;
+    /* Dark mode success */
   }
 
   .dark {
-    --bg: var(--color-dark-bg);
-    --primary: var(--color-dark-primary);
-    --secondary: var(--color-dark-secondary);
-    --accent: var(--color-dark-accent);
-    --card: var(--color-dark-card);
-    --text-primary: var(--color-dark-text-primary);
-    --text-muted: var(--color-dark-text-muted);
-    --border: var(--color-dark-border);
-    --error: var(--color-dark-error);
-    --success: var(--color-dark-success);
+    --bg: #0f172a;
+    /* Fixed dark background */
+    --primary: #FF3131;
+    /* Dark mode primary */
+    --secondary: #E5E7EB;
+    /* Dark mode secondary */
+    --accent: #FF0080;
+    /* Dark mode accent */
+    --card: #1F2937;
+    /* Dark mode card */
+    --text-primary: #F3F4F6;
+    /* Dark mode text - light gray/white */
+    --text-muted: #9CA3AF;
+    /* Dark mode muted text */
+    --border: #374151;
+    /* Dark mode border */
+    --error: #F87171;
+    /* Dark mode error */
+    --success: #34D399;
+    /* Dark mode success */
   }
 
   /* ===== GLOBAL STYLES ===== */
@@ -337,6 +357,11 @@ object {
 
   html {
     scroll-behavior: smooth;
+    background-color: #0f172a !important;
+    /* Fixed dark background */
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   body {
@@ -348,10 +373,18 @@ object {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background-color: #0f172a !important;
+    /* Fixed dark background */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
   }
 
   #root {
     @apply bg-[var(--bg)] text-[var(--text-primary)];
+    background-color: #0f172a !important;
+    /* Fixed dark background */
+    min-height: 100vh;
   }
 
 
@@ -480,6 +513,123 @@ object {
   ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
   }
+
+  /* ===== FORCE DARK MODE GLOBALLY ===== */
+  /* Override any light mode backgrounds */
+  .bg-gray-50,
+  .bg-white,
+  [class*="bg-gray-50"],
+  [class*="bg-white"] {
+    background-color: var(--bg) !important;
+  }
+
+  /* Ensure all text is visible - comprehensive text color overrides */
+  .text-black,
+  .text-gray-900,
+  .text-gray-800,
+  .text-gray-700,
+  .text-gray-600,
+  .text-gray-500,
+  .text-gray-400,
+  [class*="text-black"],
+  [class*="text-gray-900"],
+  [class*="text-gray-800"],
+  [class*="text-gray-700"],
+  [class*="text-gray-600"],
+  [class*="text-gray-500"],
+  [class*="text-gray-400"] {
+    color: var(--text-primary) !important;
+  }
+
+  /* Override any remaining gray text */
+  p,
+  span,
+  div,
+  a,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: inherit;
+  }
+
+  /* Ensure headings are always visible */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--text-primary) !important;
+  }
+
+  /* Ensure paragraphs and spans are visible */
+  p {
+    color: var(--text-primary);
+  }
+
+  /* Force dark backgrounds on sections */
+  section[class*="bg-gray-50"],
+  section[class*="bg-white"],
+  div[class*="bg-gray-50"],
+  div[class*="bg-white"] {
+    background-color: var(--bg) !important;
+  }
+
+  /* Input and textarea dark mode styling */
+  input,
+  textarea,
+  select {
+    background-color: var(--bg) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border) !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-muted) !important;
+    opacity: 0.6 !important;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: var(--primary) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2) !important;
+  }
+
+  input:disabled,
+  textarea:disabled,
+  select:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+    background-color: var(--card) !important;
+  }
+
+  /* Ensure buttons maintain their styling */
+  button {
+    color: inherit;
+  }
+
+  /* Override Tailwind's default gray colors */
+  .prose {
+    color: var(--text-primary) !important;
+  }
+
+  /* Ensure links are visible */
+  a:not([class*="bg-"]):not([class*="btn"]) {
+    color: var(--text-primary);
+  }
+
+  a:hover {
+    color: var(--primary);
+  }
+
+
 }
 
 /* ===== GLASSMORPHISM & 3D EFFECTS ===== */
