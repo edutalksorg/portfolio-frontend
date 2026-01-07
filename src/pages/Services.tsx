@@ -34,7 +34,7 @@ const Services: React.FC = () => {
             icon: <BarChart3 size={48} />,
             title: 'Data Science & Analytics',
             description: 'Extract powerful insights from complex data sets using statistical analysis, machine learning, and advanced visualization tools.',
-            color: 'from-blue-600 to-cyan-500',
+            color: 'from-red-600 to-orange-500',
             curriculum: [
                 'Data Science Foundations',
                 'Python for Data Science',

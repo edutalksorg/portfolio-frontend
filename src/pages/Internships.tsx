@@ -9,7 +9,7 @@ const Internships: React.FC = () => {
     // Updated color palettes to match new Blue/Indigo theme (removed Pink)
     const benefits = [
         { icon: <Lightbulb size={32} />, title: 'Real Projects', description: 'Work on actual products used by thousands of students', color: 'from-yellow-400 to-orange-500' },
-        { icon: <Users size={32} />, title: 'Mentorship', description: 'Learn from experienced industry professionals', color: 'from-cyan-500 to-blue-500' },
+        { icon: <Users size={32} />, title: 'Mentorship', description: 'Learn from experienced industry professionals', color: 'from-red-500 to-orange-500' },
         { icon: <Code size={32} />, title: 'Skill Development', description: 'Hands-on experience with cutting-edge technologies', color: 'from-indigo-500 to-violet-600' },
         { icon: <CheckCircle2 size={32} />, title: 'Certificate', description: 'Receive completion certificate and letter of recommendation', color: 'from-emerald-500 to-teal-400' },
     ];

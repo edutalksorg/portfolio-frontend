@@ -93,7 +93,7 @@ object {
 
   /* Dark Mode Colors */
   --color-dark-bg: #111827;
-  --color-dark-primary: #00F0FF;
+  --color-dark-primary: #FF3131;
   --color-dark-secondary: #E5E7EB;
   --color-dark-accent: #FF0080;
   --color-dark-card: #1F2937;
@@ -243,9 +243,9 @@ object {
   transform-style: preserve-3d;
 }
 
-@utility neon-glow-cyan {
-  text-shadow: var(--neon-cyan);
-  color: #00D9FF;
+@utility neon-glow-red {
+  text-shadow: var(--neon-red);
+  color: #FF3131;
   animation: neonPulse 2s ease-in-out infinite;
 }
 
@@ -262,7 +262,7 @@ object {
     content: '';
     position: absolute;
     inset: -2px;
-    background: linear-gradient(45deg, #00D9FF, #FF006E, #00F0FF, #FF0080);
+    background: linear-gradient(45deg, #FF3131, #FF006E, #FF4D4D, #FF0080);
     background-size: 300% 300%;
     border-radius: inherit;
     z-index: -1;
@@ -271,7 +271,7 @@ object {
 }
 
 @utility morph-bg {
-  background: linear-gradient(135deg, #00D9FF 0%, #FF006E 100%);
+  background: linear-gradient(135deg, #FF3131 0%, #FF006E 100%);
   background-size: 200% 200%;
   animation: morphBackground 8s ease infinite;
 }
@@ -530,9 +530,9 @@ object {
 }
 
 /* ===== NEON & FUTURISTIC EFFECTS ===== */
-.neon-border-cyan {
-  border: 2px solid #00D9FF;
-  box-shadow: 0 0 10px #00D9FF, inset 0 0 10px rgba(0, 217, 255, 0.2);
+.neon-border-red-glow {
+  border: 2px solid #FF3131;
+  box-shadow: 0 0 10px #FF3131, inset 0 0 10px rgba(255, 49, 49, 0.2);
   animation: neonBorderPulse 2s ease-in-out infinite;
 }
 
@@ -544,7 +544,7 @@ object {
 
 .holographic-card {
   position: relative;
-  background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(255, 0, 110, 0.1));
+  background: linear-gradient(135deg, rgba(255, 49, 49, 0.1), rgba(255, 0, 110, 0.1));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   overflow: hidden;
@@ -557,13 +557,13 @@ object {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(0, 217, 255, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(255, 49, 49, 0.1), transparent);
   transform: rotate(45deg);
   animation: holographicShine 3s linear infinite;
 }
 
 .gradient-text-animated {
-  background: linear-gradient(90deg, #00D9FF, #FF006E, #00F0FF, #FF0080);
+  background: linear-gradient(90deg, #FF3131, #FF006E, #FF4D4D, #FF0080);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -573,25 +573,25 @@ object {
 
 .cyber-grid {
   background-image:
-    linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(255, 49, 49, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 49, 49, 0.1) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: gridMove 20s linear infinite;
 }
 
 .glow-box {
   box-shadow:
-    0 0 20px rgba(0, 217, 255, 0.3),
+    0 0 20px rgba(255, 49, 49, 0.3),
     0 0 40px rgba(255, 0, 110, 0.2),
-    inset 0 0 20px rgba(0, 217, 255, 0.1);
+    inset 0 0 20px rgba(255, 49, 49, 0.1);
   transition: all 0.3s ease;
 }
 
 .glow-box:hover {
   box-shadow:
-    0 0 30px rgba(0, 217, 255, 0.5),
+    0 0 30px rgba(255, 49, 49, 0.5),
     0 0 60px rgba(255, 0, 110, 0.4),
-    inset 0 0 30px rgba(0, 217, 255, 0.2);
+    inset 0 0 30px rgba(255, 49, 49, 0.2);
   transform: translateY(-5px);
 }
 
@@ -607,7 +607,7 @@ object {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #00D9FF, transparent);
+  background: linear-gradient(90deg, transparent, #FF3131, transparent);
   animation: scanLineMove 2s linear infinite;
 }
 
@@ -1108,11 +1108,11 @@ object {
 
   0%,
   100% {
-    box-shadow: 0 0 10px currentColor, inset 0 0 10px rgba(0, 217, 255, 0.2);
+    box-shadow: 0 0 10px currentColor, inset 0 0 10px rgba(255, 49, 49, 0.2);
   }
 
   50% {
-    box-shadow: 0 0 20px currentColor, inset 0 0 20px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 0 20px currentColor, inset 0 0 20px rgba(255, 49, 49, 0.4);
   }
 }
 

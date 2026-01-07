@@ -69,11 +69,11 @@ const CustomCursor: React.FC = () => {
                     style={{
                         width: isHovering ? 45 : 30,
                         height: isHovering ? 45 : 30,
-                        border: `2px solid ${isHovering ? '#FF006E' : '#00D9FF'}`,
+                        border: `2px solid ${isHovering ? '#FF006E' : '#FF3131'}`,
                         backgroundColor: 'transparent',
                         boxShadow: isHovering
                             ? '0 0 10px rgba(255, 0, 110, 0.3)'
-                            : '0 0 5px rgba(0, 217, 255, 0.2)',
+                            : '0 0 5px rgba(255, 49, 49, 0.2)',
                     }}
                     animate={{
                         opacity: isVisible ? 1 : 0
@@ -94,8 +94,8 @@ const CustomCursor: React.FC = () => {
                     style={{
                         width: isHovering ? 8 : 6,
                         height: isHovering ? 8 : 6,
-                        backgroundColor: isHovering ? '#FF006E' : '#00D9FF',
-                        boxShadow: isHovering ? '0 0 10px #FF006E' : '0 0 5px #00D9FF',
+                        backgroundColor: isHovering ? '#FF006E' : '#FF3131',
+                        boxShadow: isHovering ? '0 0 10px #FF006E' : '0 0 5px #FF3131',
                         mixBlendMode: 'difference'
                     }}
                 />
@@ -104,7 +104,7 @@ const CustomCursor: React.FC = () => {
             {/* Input Indicator */}
             {isInput && (
                 <motion.div
-                    className="fixed top-0 left-0 h-5 w-[1px] bg-cyan-400"
+                    className="fixed top-0 left-0 h-5 w-[1px] bg-red-500"
                     style={{ x: mouseX, y: mouseY }}
                     animate={{ opacity: 1 }}
                 />

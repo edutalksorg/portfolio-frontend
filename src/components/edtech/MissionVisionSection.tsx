@@ -34,7 +34,7 @@ export const MissionVisionSection: React.FC = () => {
                 'Community Building',
                 'Lifelong Learning',
             ],
-            gradient: 'from-blue-500 to-cyan-500',
+            gradient: 'from-red-600 to-orange-500',
         },
     ];
 

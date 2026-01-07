@@ -40,7 +40,7 @@ const Careers: React.FC = () => {
     const values = [
         { icon: <Heart size={32} />, title: 'Work-Life Balance', description: 'Flexible hours and remote work options', color: 'from-indigo-500 to-violet-400' },
         { icon: <TrendingUp size={32} />, title: 'Growth Opportunities', description: 'Continuous learning and career advancement', color: 'from-green-500 to-emerald-400' },
-        { icon: <Users size={32} />, title: 'Collaborative Culture', description: 'Work with passionate, talented individuals', color: 'from-blue-500 to-cyan-400' },
+        { icon: <Users size={32} />, title: 'Collaborative Culture', description: 'Work with passionate, talented individuals', color: 'from-red-500 to-orange-400' },
         { icon: <Zap size={32} />, title: 'Innovation First', description: 'Experiment with cutting-edge technologies', color: 'from-purple-500 to-violet-400' },
     ];
 

@@ -39,7 +39,7 @@ export const AboutSection: React.FC = () => {
 
     const stats = [
         { value: 10000, suffix: '+', label: 'Active Students', color: 'from-red-500 to-pink-500' },
-        { value: 500, suffix: '+', label: 'Expert Instructors', color: 'from-blue-500 to-cyan-500' },
+        { value: 500, suffix: '+', label: 'Expert Instructors', color: 'from-red-500 to-orange-500' },
         { value: 1000, suffix: '+', label: 'Courses Available', color: 'from-purple-500 to-indigo-500' },
         { value: 98, suffix: '%', label: 'Success Rate', color: 'from-green-500 to-emerald-500' },
     ];
