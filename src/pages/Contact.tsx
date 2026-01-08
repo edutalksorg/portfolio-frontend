@@ -27,17 +27,90 @@ const Contact: React.FC = () => {
         }
     }, [formState]);
 
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors = { name: '', email: '', phone: '', message: '' };
+
+        // Name Validation
+        if (!formData.name.trim()) {
+            newErrors.name = 'Full Name is required';
+            isValid = false;
+        } else if (!/^[a-zA-Z\s]*$/.test(formData.name)) {
+            newErrors.name = 'Name should only contain letters';
+            isValid = false;
+        }
+
+        // Email Validation
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email Address is required';
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        // Phone Validation
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone Number is required';
+            isValid = false;
+        } else if (!/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = 'Phone number must be exactly 10 digits';
+            isValid = false;
+        }
+
+        // Message Validation
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
     const handleChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
+        const { name, value } = e.target;
+
+        // Strict Input Filtering
+        if (name === 'name') {
+            // Only allow letters and spaces
+            if (!/^[a-zA-Z\s]*$/.test(value)) return;
+        }
+
+        if (name === 'phone') {
+            // Only allow digits and max length 10
+            if (!/^\d*$/.test(value) || value.length > 10) return;
+        }
+
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value
+            [name]: value
         });
+        // Clear error when user types
+        if (errors[name as keyof typeof errors]) {
+            setErrors({
+                ...errors,
+                [name]: ''
+            });
+        }
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!validateForm()) {
+            return;
+        }
+
         setFormState('submitting');
         setErrorMessage('');
 
@@ -48,6 +121,7 @@ const Contact: React.FC = () => {
             if (data.success) {
                 setFormState('success');
                 setFormData({ name: '', email: '', phone: '', message: '' });
+                setErrors({ name: '', email: '', phone: '', message: '' });
             } else {
                 setFormState('error');
                 setErrorMessage(
@@ -241,8 +315,9 @@ const Contact: React.FC = () => {
                                                         placeholder="John Doe"
                                                         value={formData.name}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                        className={`w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border ${errors.name ? 'border-red-500' : 'border-[var(--border)]'} focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                                                     />
+                                                    {errors.name && <p className="text-xs text-red-500 ml-1">{errors.name}</p>}
                                                 </motion.div>
 
                                                 <motion.div className="space-y-2">
@@ -257,8 +332,9 @@ const Contact: React.FC = () => {
                                                         placeholder="john@example.com"
                                                         value={formData.email}
                                                         onChange={handleChange}
-                                                        className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                        className={`w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border ${errors.email ? 'border-red-500' : 'border-[var(--border)]'} focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                                                     />
+                                                    {errors.email && <p className="text-xs text-red-500 ml-1">{errors.email}</p>}
                                                 </motion.div>
                                             </div>
 
@@ -274,8 +350,9 @@ const Contact: React.FC = () => {
                                                     placeholder="+91 96401 11233"
                                                     value={formData.phone}
                                                     onChange={handleChange}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                                                    className={`w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border ${errors.phone ? 'border-red-500' : 'border-[var(--border)]'} focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all`}
                                                 />
+                                                {errors.phone && <p className="text-xs text-red-500 ml-1">{errors.phone}</p>}
                                             </motion.div>
 
                                             {/* MESSAGE */}
@@ -291,8 +368,9 @@ const Contact: React.FC = () => {
                                                     value={formData.message}
                                                     onChange={handleChange}
                                                     rows={5}
-                                                    className="w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border border-[var(--border)] focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                                                    className={`w-full px-6 py-4 rounded-2xl bg-[var(--bg)] border ${errors.message ? 'border-red-500' : 'border-[var(--border)]'} focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none`}
                                                 />
+                                                {errors.message && <p className="text-xs text-red-500 ml-1">{errors.message}</p>}
                                             </motion.div>
 
                                             {/* BUTTON */}

@@ -132,22 +132,89 @@ const Services: React.FC = () => {
         { icon: <BookOpen size={24} />, text: 'Flexible learning' }
     ];
 
+    const [formData, setFormData] = useState({ name: '', phone: '', email: '', course: '' });
+    const [errors, setErrors] = useState({ name: '', phone: '', email: '' });
+
     const handleClose = () => {
         setSelectedCourse(null);
         setIsEnrolling(false);
         setIsSubmitted(false);
+        setFormData({ name: '', phone: '', email: '', course: '' });
+        setErrors({ name: '', phone: '', email: '' });
     };
 
     const handleEnroll = () => {
+        setFormData(prev => ({ ...prev, course: selectedCourse?.title || '' }));
         setIsEnrolling(true);
+    };
+
+    const validateForm = () => {
+        let isValid = true;
+        const newErrors = { name: '', phone: '', email: '' };
+
+        // Name Validation: Only letters and spaces
+        if (!formData.name.trim()) {
+            newErrors.name = 'Name is required';
+            isValid = false;
+        } else if (!/^[a-zA-Z\s]*$/.test(formData.name)) {
+            newErrors.name = 'Name should only contain letters and spaces';
+            isValid = false;
+        }
+
+        // Phone Validation: 10 digits
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+            isValid = false;
+        } else if (!/^\d{10}$/.test(formData.phone)) {
+            newErrors.phone = 'Please enter a valid 10-digit phone number';
+            isValid = false;
+        }
+
+        // Email Validation
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+            isValid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitted(true);
-        setTimeout(() => {
-            handleClose();
-        }, 3000);
+        if (validateForm()) {
+            setIsSubmitted(true);
+            setTimeout(() => {
+                handleClose();
+            }, 3000);
+        }
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const { name, value } = e.target;
+
+        // Strict Input Filtering
+        if (name === 'name') {
+            // Only allow letters and spaces
+            if (!/^[a-zA-Z\s]*$/.test(value)) return;
+        }
+
+        if (name === 'phone') {
+            // Only allow digits and max length 10
+            if (!/^\d*$/.test(value) || value.length > 10) return;
+        }
+
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+        // Clear error when user types
+        if (errors[name as keyof typeof errors]) {
+            setErrors(prev => ({ ...prev, [name]: '' }));
+        }
     };
 
     return (
@@ -344,7 +411,7 @@ const Services: React.FC = () => {
                                     )}
                                     <button
                                         onClick={handleClose}
-                                        className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full text-gray-400 hover:text-primary transition-colors ml-auto"
+                                        className="p-2 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full text-gray-500 dark:text-white hover:text-primary transition-colors ml-auto shadow-sm"
                                     >
                                         <X size={20} />
                                     </button>
@@ -426,18 +493,26 @@ const Services: React.FC = () => {
                                                         <input
                                                             required
                                                             type="text"
+                                                            name="name"
+                                                            value={formData.name}
+                                                            onChange={handleChange}
                                                             placeholder="John Doe"
-                                                            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all dark:text-white"
+                                                            className={`w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border ${errors.name ? 'border-red-500' : 'border-gray-100 dark:border-gray-700'} focus:border-primary outline-none transition-all dark:text-white`}
                                                         />
+                                                        {errors.name && <p className="text-xs text-red-500 ml-1">{errors.name}</p>}
                                                     </div>
                                                     <div className="space-y-2">
                                                         <label className="text-sm font-bold text-gray-500 dark:text-gray-400 ml-1">Phone Number</label>
                                                         <input
                                                             required
                                                             type="tel"
+                                                            name="phone"
+                                                            value={formData.phone}
+                                                            onChange={handleChange}
                                                             placeholder="+91 98765 43210"
-                                                            className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all"
+                                                            className={`w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border ${errors.phone ? 'border-red-500' : 'border-gray-100 dark:border-gray-700'} focus:border-primary outline-none transition-all dark:text-white`}
                                                         />
+                                                        {errors.phone && <p className="text-xs text-red-500 ml-1">{errors.phone}</p>}
                                                     </div>
                                                 </div>
 
@@ -446,16 +521,22 @@ const Services: React.FC = () => {
                                                     <input
                                                         required
                                                         type="email"
+                                                        name="email"
+                                                        value={formData.email}
+                                                        onChange={handleChange}
                                                         placeholder="john@example.com"
-                                                        className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all"
+                                                        className={`w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border ${errors.email ? 'border-red-500' : 'border-gray-100 dark:border-gray-700'} focus:border-primary outline-none transition-all dark:text-white`}
                                                     />
+                                                    {errors.email && <p className="text-xs text-red-500 ml-1">{errors.email}</p>}
                                                 </div>
 
                                                 <div className="space-y-2">
                                                     <label className="text-sm font-bold text-gray-500 dark:text-gray-400 ml-1">Selected Course</label>
                                                     <select
-                                                        className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all appearance-none"
-                                                        defaultValue={selectedCourse.title}
+                                                        name="course"
+                                                        value={formData.course}
+                                                        onChange={handleChange}
+                                                        className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 focus:border-primary outline-none transition-all appearance-none dark:text-white"
                                                     >
                                                         {courses.map((c, idx) => (
                                                             <option key={idx} value={c.title}>{c.title}</option>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Code, Lightbulb, CheckCircle2, ArrowRight, Zap, Award, Target, Briefcase } from 'lucide-react';
-import { FadeIn, StaggerContainer, StaggerItem, Magnetic, Floating, CountUp } from '../components/animations';
+import { FadeIn, StaggerContainer, StaggerItem, Magnetic, CountUp } from '../components/animations';
 import { FloatingOrbs } from '../components/animations/ParticleField';
 import FAQ from '../components/FAQ';
 
@@ -40,9 +40,9 @@ const Internships: React.FC = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <Floating duration={2} distance={5} className="inline-flex items-center gap-2">
+                            <div className="inline-flex items-center gap-2">
                                 <Award size={16} /> Now Accepting Applications
-                            </Floating>
+                            </div>
                         </motion.span>
 
                         <h1 className="text-2xl sm:text-3xl md:text-5xl font-black mb-6 tracking-tight dark:text-white">
