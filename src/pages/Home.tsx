@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Users, BookOpen, Target, Sparkles, Code, ChevronDown, ShoppingBag } from 'lucide-react';
-import { FadeIn, SlideIn, StaggerContainer, StaggerItem, CountUp, Floating, Magnetic, TextReveal } from '../components/animations';
+import { FadeIn, SlideIn, StaggerContainer, StaggerItem, CountUp, Magnetic, TextReveal } from '../components/animations';
 import { FloatingOrbs } from '../components/animations/ParticleField';
 
 const Home: React.FC = () => {
@@ -110,20 +110,20 @@ const Home: React.FC = () => {
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 items-center px-4"
+                        className="flex flex-row flex-wrap justify-center gap-3 sm:gap-8 items-center px-2 sm:px-4"
                     >
                         <Magnetic strength={0.2}>
-                            <a href="/products" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
+                            <a href="/products" className="w-auto min-w-[120px] px-4 py-3 bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
                                 Products <ShoppingBag size={16} />
                             </a>
                         </Magnetic>
                         <Magnetic strength={0.2}>
-                            <a href="/internships" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 shadow-xl shadow-primary/20 ripple-container whitespace-nowrap text-sm">
+                            <a href="/internships" className="w-auto min-w-[120px] px-4 py-3 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 shadow-xl shadow-primary/20 ripple-container whitespace-nowrap text-sm">
                                 Internships <ArrowRight size={16} />
                             </a>
                         </Magnetic>
-                        <Magnetic strength={0.2}>
-                            <a href="/contact" className="w-full sm:w-auto min-w-[144px] px-4 py-3 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-black transition-all transform hover:scale-105 whitespace-nowrap text-sm flex items-center justify-center">
+                        <Magnetic strength={0.2} className="w-full sm:w-auto flex justify-center mt-2 sm:mt-0">
+                            <a href="/contact" className="w-auto min-w-[120px] px-4 py-3 bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 flex items-center justify-center gap-1.5 border-2 border-primary whitespace-nowrap text-sm">
                                 Contact Us
                             </a>
                         </Magnetic>
@@ -146,11 +146,9 @@ const Home: React.FC = () => {
                     <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
                         {stats.map((stat, idx) => (
                             <StaggerItem key={idx} className="text-center space-y-2">
-                                <Floating duration={3} distance={10} delay={idx * 0.2}>
-                                    <div className="flex justify-center mb-4 text-primary">
-                                        {stat.icon}
-                                    </div>
-                                </Floating>
+                                <div className="flex justify-center mb-4 text-primary">
+                                    {stat.icon}
+                                </div>
                                 <h3 className="text-4xl font-black text-light-text-primary dark:text-dark-text-primary">
                                     <CountUp end={stat.value} suffix={stat.suffix} duration={2} delay={idx * 0.2} />
                                 </h3>
@@ -458,16 +456,12 @@ const Home: React.FC = () => {
                                     Join thousands of learners who are already building their future with Edutalks. Start your journey today!
                                 </p>
                                 <div className="flex flex-wrap justify-center gap-4">
-                                    <Magnetic>
-                                        <a href="/services" className="px-6 py-3 text-sm bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20 inline-block">
-                                            Explore Courses
-                                        </a>
-                                    </Magnetic>
-                                    <Magnetic>
-                                        <a href="/contact" className="px-6 py-3 text-sm bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary inline-block">
-                                            Contact Us
-                                        </a>
-                                    </Magnetic>
+                                    <a href="/services" className="px-6 py-3 text-sm bg-primary text-white font-bold rounded-full hover:bg-primary-dark transition-all transform hover:scale-105 shadow-xl shadow-primary/20 inline-block">
+                                        Explore Courses
+                                    </a>
+                                    <a href="/contact" className="px-6 py-3 text-sm bg-[var(--card)] text-primary font-bold rounded-full hover:shadow-xl transition-all transform hover:scale-105 border-2 border-primary inline-block">
+                                        Contact Us
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>

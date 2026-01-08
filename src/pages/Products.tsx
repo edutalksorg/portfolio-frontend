@@ -84,7 +84,7 @@ const Products: React.FC = () => {
 
                         <div className="max-w-md mx-auto">
                             <Magnetic>
-                                <a href="/" className="inline-flex items-center justify-center px-8 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all border border-gray-200 dark:border-gray-700">
+                                <a href="/" className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-red-700 transition-all border border-transparent shadow-lg shadow-primary/20">
                                     Return Home <ArrowRight size={18} className="ml-2" />
                                 </a>
                             </Magnetic>
