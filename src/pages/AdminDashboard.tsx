@@ -456,7 +456,7 @@ const AdminDashboard: React.FC = () => {
 
                     {((activeTab === 'jobs' && jobs.length === 0) || (activeTab === 'team' && team.length === 0)) && (
                         <div className="text-center py-24 bg-white dark:bg-gray-800 rounded-[3rem] border-2 border-dashed border-gray-200 dark:border-gray-700">
-                            <div className="w-20 h-20 bg-gray-100 dark:bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400">
+                            <div className="w-20 h-20 bg-[var(--bg)] rounded-full flex items-center justify-center mx-auto mb-6 text-gray-400">
                                 {activeTab === 'jobs' ? <Briefcase size={32} /> : <Users size={32} />}
                             </div>
                             <h3 className="text-2xl font-black text-gray-400 mb-2">No {activeTab} yet</h3>
