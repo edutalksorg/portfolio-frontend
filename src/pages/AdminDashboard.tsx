@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Edit2, Trash2, LogOut, Users, Briefcase, Image as ImageIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -30,6 +30,7 @@ const AdminDashboard: React.FC = () => {
     const [jobs, setJobs] = useState<Job[]>([]);
     const [team, setTeam] = useState<TeamMember[]>([]);
     const [showForm, setShowForm] = useState(false);
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     // Form States
     const [editingJob, setEditingJob] = useState<Job | null>(null);
@@ -83,6 +84,17 @@ const AdminDashboard: React.FC = () => {
         }
     };
 
+    const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setMemberFormData({ ...memberFormData, image: reader.result as string });
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     const handleJobSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const token = localStorage.getItem('adminToken');
@@ -109,22 +121,31 @@ const AdminDashboard: React.FC = () => {
 
     const handleMemberSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        console.log('handleMemberSubmit triggered');
+        console.log('Member Form Data:', memberFormData);
+
         const token = localStorage.getItem('adminToken');
         try {
             const url = editingMember ? `/team/${editingMember.id}` : '/team';
             const method = editingMember ? 'put' : 'post';
+            console.log(`Sending ${method.toUpperCase()} request to ${url}`);
 
             // @ts-ignore - dynamic method call
             const response = await api[method](url, memberFormData, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
 
+            console.log('API Response:', response);
+
             const data = response.data;
             if (data.success) {
+                console.log('Success! Fetching team...');
                 fetchTeam();
                 setShowForm(false);
                 setEditingMember(null);
                 setMemberFormData({ name: '', role: '', image: '', description: '' });
+            } else {
+                console.error('API returned success: false', data);
             }
         } catch (error) {
             console.error('Submit team member error:', error);
@@ -213,7 +234,7 @@ const AdminDashboard: React.FC = () => {
                 </div>
 
                 {/* Tab Switcher */}
-                <div className="flex p-1.5 bg-gray-200 dark:bg-gray-800 rounded-2xl w-fit mb-10 shadow-inner">
+                <div className="flex p-1.5 bg-[var(--bg)] rounded-2xl w-fit mb-10 shadow-inner border border-[var(--border)]">
                     <button
                         onClick={() => { setActiveTab('jobs'); setShowForm(false); }}
                         className={`px-8 py-3 rounded-xl font-bold transition-all flex items-center gap-2 ${activeTab === 'jobs' ? 'bg-primary text-white shadow-lg' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
@@ -320,7 +341,7 @@ const AdminDashboard: React.FC = () => {
                                             <button type="submit" className="px-10 py-4 bg-primary text-white font-black rounded-2xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/20">
                                                 {editingJob ? 'Save Changes' : 'Publish Job'}
                                             </button>
-                                            <button type="button" onClick={() => setShowForm(false)} className="px-10 py-4 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-bold rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
+                                            <button type="button" onClick={() => setShowForm(false)} className="px-10 py-4 bg-[var(--bg)] border border-[var(--border)] text-gray-400 font-bold rounded-2xl hover:bg-gray-800 hover:text-white transition-all">
                                                 Discard
                                             </button>
                                         </div>
@@ -353,7 +374,14 @@ const AdminDashboard: React.FC = () => {
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-sm font-bold text-gray-500 dark:text-white">Profile Image URL</label>
-                                            <div className="flex gap-4">
+                                            <div className="flex gap-4 items-center">
+                                                <input
+                                                    type="file"
+                                                    ref={fileInputRef}
+                                                    className="hidden"
+                                                    accept="image/*"
+                                                    onChange={handleImageUpload}
+                                                />
                                                 <input
                                                     type="url"
                                                     value={memberFormData.image}
@@ -361,8 +389,15 @@ const AdminDashboard: React.FC = () => {
                                                     className="flex-1 px-5 py-4 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white focus:border-primary outline-none transition-all placeholder:text-gray-400"
                                                     placeholder="https://images.unsplash.com/..."
                                                 />
-                                                <div className="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center overflow-hidden">
-                                                    {memberFormData.image ? <img src={memberFormData.image} alt="Preview" className="w-full h-full object-cover" /> : <ImageIcon className="text-gray-400" />}
+                                                <div
+                                                    onClick={() => fileInputRef.current?.click()}
+                                                    className="w-14 h-14 rounded-2xl bg-[var(--bg)] border border-[var(--border)] flex items-center justify-center overflow-hidden cursor-pointer hover:border-primary hover:bg-gray-800 transition-all group"
+                                                >
+                                                    {memberFormData.image ? (
+                                                        <img src={memberFormData.image} alt="Preview" className="w-full h-full object-cover" />
+                                                    ) : (
+                                                        <ImageIcon className="text-gray-400 group-hover:text-primary transition-colors" />
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>
@@ -380,7 +415,7 @@ const AdminDashboard: React.FC = () => {
                                             <button type="submit" className="px-10 py-4 bg-primary text-white font-black rounded-2xl hover:bg-primary-dark transition-all shadow-lg shadow-primary/20">
                                                 {editingMember ? 'Save Changes' : 'Add to Team'}
                                             </button>
-                                            <button type="button" onClick={() => { setShowForm(false); setEditingMember(null); setMemberFormData({ name: '', role: '', image: '', description: '' }); }} className="px-10 py-4 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-bold rounded-2xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
+                                            <button type="button" onClick={() => { setShowForm(false); setEditingMember(null); setMemberFormData({ name: '', role: '', image: '', description: '' }); }} className="px-10 py-4 bg-[var(--bg)] border border-[var(--border)] text-gray-400 font-bold rounded-2xl hover:bg-gray-800 hover:text-white transition-all">
                                                 Discard
                                             </button>
                                         </div>
@@ -413,7 +448,7 @@ const AdminDashboard: React.FC = () => {
                                 <div className="flex gap-2">
                                     <button
                                         onClick={() => handleEditJob(job)}
-                                        className="p-3 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 rounded-xl hover:text-primary transition-colors"
+                                        className="p-3 bg-[var(--bg)] border border-[var(--border)] text-gray-600 dark:text-gray-400 rounded-xl hover:text-primary transition-colors"
                                     >
                                         <Edit2 size={20} />
                                     </button>
@@ -444,7 +479,7 @@ const AdminDashboard: React.FC = () => {
                                 <div className="flex gap-2">
                                     <button
                                         onClick={() => handleEditMember(member)}
-                                        className="p-3 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-400 rounded-xl hover:text-primary transition-colors"
+                                        className="p-3 bg-[var(--bg)] border border-[var(--border)] text-gray-600 dark:text-gray-400 rounded-xl hover:text-primary transition-colors"
                                     >
                                         <Edit2 size={20} />
                                     </button>

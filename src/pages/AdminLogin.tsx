@@ -93,6 +93,8 @@ const AdminLogin: React.FC = () => {
                                             name="email"
                                             type="email"
                                             required
+                                            autoComplete="off"
+                                            placeholder=""
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-900/50 border border-gray-700/50 focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all text-[var(--text-primary)]"
@@ -108,6 +110,8 @@ const AdminLogin: React.FC = () => {
                                             name="password"
                                             type="password"
                                             required
+                                            autoComplete="new-password"
+                                            placeholder=""
                                             value={formData.password}
                                             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                                             className="w-full pl-14 pr-6 py-4 rounded-2xl bg-gray-900/50 border border-gray-700/50 focus:border-[var(--primary)] focus:ring-2 focus:ring-primary/20 outline-none transition-all text-[var(--text-primary)]"

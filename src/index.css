@@ -613,6 +613,7 @@ object {
   /* Ensure buttons maintain their styling */
   button {
     color: inherit;
+    cursor: pointer;
   }
 
   /* Override Tailwind's default gray colors */

@@ -30,46 +30,6 @@ const About: React.FC = () => {
                         email: '#'
                     }));
                     setTeamMembers(mappedTeam);
-                } else {
-                    // Fallback to initial team if DB is empty
-                    setTeamMembers([
-                        {
-                            id: 1,
-                            name: 'Dr. Rajesh Kumar',
-                            role: 'Founder & CEO',
-                            image: 'https://ui-avatars.com/api/?name=Dr+Rajesh+Kumar&background=f97316&color=fff&size=400',
-                            bio: 'Visionary leader with 15+ years in EdTech, passionate about democratizing quality education.',
-                            linkedin: '#',
-                            email: 'rajesh@edutalks.com'
-                        },
-                        {
-                            id: 2,
-                            name: 'Priya Sharma',
-                            role: 'Chief Technology Officer',
-                            image: 'https://ui-avatars.com/api/?name=Priya+Sharma&background=f97316&color=fff&size=400',
-                            bio: 'Tech innovator building scalable learning platforms that reach millions of students.',
-                            linkedin: '#',
-                            email: 'priya@edutalks.com'
-                        },
-                        {
-                            id: 3,
-                            name: 'Amit Patel',
-                            role: 'Head of Curriculum',
-                            image: 'https://ui-avatars.com/api/?name=Amit+Patel&background=f97316&color=fff&size=400',
-                            bio: 'Curriculum expert designing industry-aligned programs that bridge the skill gap.',
-                            linkedin: '#',
-                            email: 'amit@edutalks.com'
-                        },
-                        {
-                            id: 4,
-                            name: 'Sneha Reddy',
-                            role: 'Director of Student Success',
-                            image: 'https://ui-avatars.com/api/?name=Sneha+Reddy&background=f97316&color=fff&size=400',
-                            bio: 'Student advocate ensuring every learner achieves their career goals through personalized support.',
-                            linkedin: '#',
-                            email: 'sneha@edutalks.com'
-                        }
-                    ]);
                 }
             } catch (error) {
                 console.error('Fetch team error:', error);
