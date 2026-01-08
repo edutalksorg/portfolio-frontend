@@ -86,7 +86,7 @@ const Home: React.FC = () => {
                             <TextReveal text="Where Education Meets" delay={0.2} />
                             <br />
                             <motion.span
-                                className="text-red-500 italic inline-block"
+                                className="text-red-500 inline-block"
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, delay: 0.8 }}
