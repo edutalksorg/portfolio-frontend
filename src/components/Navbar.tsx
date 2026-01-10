@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoDark from '../assets/edutalks-logo-dark.svg';
+import logoLight from '../assets/edutalks-logo-light.svg';
 
 import { StaggerContainer, StaggerItem } from './animations';
 
@@ -15,7 +16,7 @@ const Navbar: React.FC = () => {
 
 
     const navLinks = [
-        { name: 'Home', path: '/' },
+        { name: 'Home', path: '/home' },
         { name: 'About Us', path: '/about' },
         { name: 'Courses', path: '/services' },
         { name: 'Internships', path: '/internships' },
@@ -28,13 +29,13 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`absolute top-0 left-0 w-full z-50 py-0 transition-colors duration-300 ${location.pathname === '/' ? 'bg-transparent' : 'bg-[#0F0F23] shadow-md'}`}
+            className={`absolute top-0 left-0 w-full z-50 py-0 transition-colors duration-300 ${location.pathname === '/' ? 'bg-white/70 backdrop-blur-md shadow-sm' : 'bg-[#0F0F23] shadow-md'}`}
         >
             <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
                 {/* Logo */}
                 <Link to="/" className="flex items-center relative z-50">
                     <img
-                        src={logoDark}
+                        src={location.pathname === '/' ? logoLight : logoDark}
                         alt="EduTalks Logo"
                         className="h-0.5 sm:h-1.5 w-auto pointer-events-none"
                     />
@@ -48,7 +49,7 @@ const Navbar: React.FC = () => {
                                 to={link.path}
                                 className={`text-sm font-bold transition-colors !min-h-0 !min-w-0 py-0.5 ${location.pathname === link.path
                                     ? 'text-primary'
-                                    : 'text-gray-300 hover:text-white'
+                                    : location.pathname === '/' ? 'text-gray-700 hover:text-purple-600' : 'text-gray-300 hover:text-white'
                                     }`}
                             >
                                 {link.name}
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
                 <div className="md:hidden flex items-center gap-4 relative z-50">
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        className="text-white"
+                        className={isMobileMenuOpen || location.pathname !== '/' ? 'text-white' : 'text-gray-900'}
                     >
                         <AnimatePresence mode="wait">
                             <motion.div

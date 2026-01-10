@@ -514,8 +514,8 @@ object {
     background: var(--primary);
   }
 
-  /* ===== FORCE DARK MODE GLOBALLY ===== */
-  /* Override any light mode backgrounds */
+  /* ===== FORCE DARK MODE GLOBALLY - COMMENTED OUT FOR LANDING PAGE COMPATIBILITY ===== */
+  /*
   .bg-gray-50,
   .bg-white,
   [class*="bg-gray-50"],
@@ -523,7 +523,6 @@ object {
     background-color: var(--bg) !important;
   }
 
-  /* Ensure all text is visible - comprehensive text color overrides */
   .text-black,
   .text-gray-900,
   .text-gray-800,
@@ -541,37 +540,10 @@ object {
     color: var(--text-primary) !important;
   }
 
-  /* Override any remaining gray text */
-  p,
-  span,
-  div,
-  a,
-  li,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: inherit;
-  }
-
-  /* Ensure headings are always visible */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     color: var(--text-primary) !important;
   }
 
-  /* Ensure paragraphs and spans are visible */
-  p {
-    color: var(--text-primary);
-  }
-
-  /* Force dark backgrounds on sections */
   section[class*="bg-gray-50"],
   section[class*="bg-white"],
   div[class*="bg-gray-50"],
@@ -579,7 +551,6 @@ object {
     background-color: var(--bg) !important;
   }
 
-  /* Input and textarea dark mode styling */
   input,
   textarea,
   select {
@@ -587,48 +558,7 @@ object {
     color: var(--text-primary) !important;
     border-color: var(--border) !important;
   }
-
-  input::placeholder,
-  textarea::placeholder {
-    color: var(--text-muted) !important;
-    opacity: 0.6 !important;
-  }
-
-  input:focus,
-  textarea:focus,
-  select:focus {
-    border-color: var(--primary) !important;
-    outline: none !important;
-    box-shadow: 0 0 0 2px rgba(255, 49, 49, 0.2) !important;
-  }
-
-  input:disabled,
-  textarea:disabled,
-  select:disabled {
-    opacity: 0.5 !important;
-    cursor: not-allowed !important;
-    background-color: var(--card) !important;
-  }
-
-  /* Ensure buttons maintain their styling */
-  button {
-    color: inherit;
-    cursor: pointer;
-  }
-
-  /* Override Tailwind's default gray colors */
-  .prose {
-    color: var(--text-primary) !important;
-  }
-
-  /* Ensure links are visible */
-  a:not([class*="bg-"]):not([class*="btn"]) {
-    color: var(--text-primary);
-  }
-
-  a:hover {
-    color: var(--primary);
-  }
+  */
 
 
 }
