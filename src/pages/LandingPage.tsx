@@ -284,7 +284,7 @@ const LandingPage: React.FC = () => {
                                                             {IndianStates.map((state) => (
                                                                 <div
                                                                     key={state}
-                                                                    className="px-4 py-2.5 hover:bg-purple-50 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
+                                                                    className="px-4 py-2.5 hover:bg-gray-800 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
                                                                     onClick={() => {
                                                                         setFormData({ ...formData, state });
                                                                         setOpenDropdown(null);
@@ -323,7 +323,7 @@ const LandingPage: React.FC = () => {
                                                             ].map((option) => (
                                                                 <div
                                                                     key={option.value}
-                                                                    className="px-4 py-2.5 hover:bg-purple-50 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
+                                                                    className="px-4 py-2.5 hover:bg-gray-800 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
                                                                     onClick={() => {
                                                                         setFormData({ ...formData, grade: option.value });
                                                                         setOpenDropdown(null);
@@ -355,7 +355,7 @@ const LandingPage: React.FC = () => {
                                                                 {['State Board', 'CBSE', 'ICSE'].map((board) => (
                                                                     <div
                                                                         key={board}
-                                                                        className="px-4 py-2.5 hover:bg-purple-50 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
+                                                                        className="px-4 py-2.5 hover:bg-gray-800 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
                                                                         onClick={() => {
                                                                             setFormData({ ...formData, board });
                                                                             setOpenDropdown(null);
@@ -399,7 +399,7 @@ const LandingPage: React.FC = () => {
                                                                 ].map((course) => (
                                                                     <div
                                                                         key={course}
-                                                                        className="px-4 py-2.5 hover:bg-purple-50 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
+                                                                        className="px-4 py-2.5 hover:bg-gray-800 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
                                                                         onClick={() => {
                                                                             setFormData({ ...formData, course });
                                                                             setOpenDropdown(null);
@@ -432,7 +432,7 @@ const LandingPage: React.FC = () => {
                                                                 {['JEE', 'NEET', 'EAMCET', 'BITSAT'].map((exam) => (
                                                                     <div
                                                                         key={exam}
-                                                                        className="px-4 py-2.5 hover:bg-purple-50 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
+                                                                        className="px-4 py-2.5 hover:bg-gray-800 cursor-pointer text-gray-700 text-sm transition border-b border-gray-50 last:border-0"
                                                                         onClick={() => {
                                                                             setFormData({ ...formData, course: exam });
                                                                             setOpenDropdown(null);
