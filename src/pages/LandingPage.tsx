@@ -70,7 +70,7 @@ const LandingPage: React.FC = () => {
 
             <main>
                 {/* Hero Section with Right-Side Form */}
-                <div className="bg-gradient-to-br from-[#F5F3FF] via-[#EDE9FE] to-[#FDF4FF] text-gray-900 relative overflow-hidden">
+                <div className="bg-gradient-to-br from-gray-900 via-[#1a1b4b] to-[#2d1b4e] text-white relative overflow-hidden">
                     <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] opacity-5 bg-cover bg-center" />
                     {/* Abstract Geometric Background Elements */}
                     <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
@@ -173,21 +173,21 @@ const LandingPage: React.FC = () => {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="bg-white text-gray-800 rounded-xl shadow-2xl p-6 md:p-8 max-w-md mx-auto w-full border-t-8 border-purple-600"
+                                className="bg-gray-900/90 backdrop-blur-sm text-white rounded-xl shadow-2xl p-6 md:p-8 max-w-md mx-auto w-full border border-gray-800 border-t-8 border-t-purple-600"
                             >
-                                <h3 className="text-2xl font-bold mb-2 text-center text-gray-900">Book your Free Session</h3>
-                                <p className="text-gray-500 text-center mb-4 text-sm">Learn from India's best teachers</p>
+                                <h3 className="text-2xl font-bold mb-2 text-center text-white">Book your Free Session</h3>
+                                <p className="text-gray-400 text-center mb-4 text-sm">Learn from India's best teachers</p>
 
                                 {/* Session Mode Toggle */}
                                 <div className="mb-6">
-                                    <p className="text-center text-gray-700 font-semibold mb-3">Select the Session Mode</p>
+                                    <p className="text-center text-gray-300 font-semibold mb-3">Select the Session Mode</p>
                                     <div className="grid grid-cols-2 gap-3">
                                         <button
                                             type="button"
                                             onClick={() => setFormData({ ...formData, sessionMode: 'online' })}
                                             className={`py-3 px-4 rounded-lg font-semibold transition-all ${formData.sessionMode === 'online'
                                                 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
-                                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700'
                                                 }`}
                                         >
                                             Online
@@ -197,7 +197,7 @@ const LandingPage: React.FC = () => {
                                             onClick={() => setFormData({ ...formData, sessionMode: 'offline' })}
                                             className={`py-3 px-4 rounded-lg font-semibold transition-all ${formData.sessionMode === 'offline'
                                                 ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
-                                                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                                                : 'bg-gray-800 text-gray-400 hover:bg-gray-700 border border-gray-700'
                                                 }`}
                                         >
                                             Offline
@@ -210,13 +210,13 @@ const LandingPage: React.FC = () => {
                                 {formData.sessionMode === 'online' ? (
                                     /* Online Classes Card */
                                     <div className="flex-1 flex flex-col items-center justify-center text-center px-4">
-                                        <div className="bg-purple-100 p-4 rounded-2xl mb-6 inline-block">
-                                            <Globe size={40} className="text-purple-600" />
+                                        <div className="bg-purple-900/30 p-4 rounded-2xl mb-6 inline-block">
+                                            <Globe size={40} className="text-purple-400" />
                                         </div>
-                                        <h4 className="text-2xl font-bold text-gray-900 mb-4">Online Classes</h4>
-                                        <p className="text-gray-600 mb-8 max-w-sm">
+                                        <h4 className="text-2xl font-bold text-white mb-4">Online Classes</h4>
+                                        <p className="text-gray-400 mb-8 max-w-sm">
                                             Live interactive classes, conceptual videos, and personalised learning journeys for every student.
-                                            <span className="block mt-3 text-purple-600 font-semibold">
+                                            <span className="block mt-3 text-purple-400 font-semibold">
                                                 You will be redirected to our trusted platform for live classes.
                                             </span>
                                         </p>
@@ -231,7 +231,7 @@ const LandingPage: React.FC = () => {
                                     </div>
                                 ) : (
                                     <>
-                                        <p className="text-center text-gray-700 font-semibold mb-2">Enter Your Details</p>
+                                        <p className="text-center text-gray-300 font-semibold mb-2">Enter Your Details</p>
 
                                         <form onSubmit={handleOfflineSubmit} className="space-y-2">
                                             <div>
@@ -240,7 +240,7 @@ const LandingPage: React.FC = () => {
                                                     type="text"
                                                     placeholder="Enter Name"
                                                     value={formData.name}
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition !text-gray-900"
+                                                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition"
                                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                                 />
                                             </div>
@@ -250,8 +250,10 @@ const LandingPage: React.FC = () => {
                                                     type="tel"
                                                     placeholder="Enter Mobile Number"
                                                     value={formData.phone}
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition !text-gray-900"
-                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                    maxLength={10}
+                                                    pattern="[0-9]{10}"
+                                                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 text-white placeholder-gray-500 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition"
+                                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '') })}
                                                 />
                                             </div>
                                             <div>
@@ -260,7 +262,7 @@ const LandingPage: React.FC = () => {
                                                     type="email"
                                                     placeholder="Enter Email Address"
                                                     value={formData.email}
-                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition !text-gray-900"
+                                                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 outline-none transition"
                                                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                                 />
                                             </div>
@@ -477,26 +479,26 @@ const LandingPage: React.FC = () => {
 
 
                 {/* Section: Comprehensive Learning Programs (Online/Offline Cards) */}
-                <div className="py-16 bg-white">
+                <div className="py-16 bg-gray-900">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-900">Comprehensive learning programs</h2>
-                            <p className="text-gray-500 mt-2">& classes for all students</p>
+                            <h2 className="text-3xl font-bold text-white">Comprehensive learning programs</h2>
+                            <p className="text-gray-400 mt-2">& classes for all students</p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                             {/* Online Card */}
-                            <div className="p-8 rounded-2xl border border-gray-100 shadow-xl bg-gradient-to-br from-white to-purple-50 hover:shadow-2xl transition group relative overflow-hidden">
-                                <div className="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                            <div className="p-8 rounded-2xl border border-gray-800 shadow-xl bg-gray-800 hover:bg-gray-750 hover:shadow-2xl transition group relative overflow-hidden">
+                                <div className="absolute top-0 right-0 bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">POPULAR</div>
                                 <div className="flex items-start justify-between mb-6">
-                                    <div className="bg-purple-100 p-3 rounded-xl text-purple-600">
+                                    <div className="bg-purple-900/40 p-3 rounded-xl text-purple-400">
                                         <Globe size={32} />
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-gray-900">Online Classes</h3>
-                                <p className="text-gray-600 mb-6">
+                                <h3 className="text-2xl font-bold mb-3 text-white">Online Classes</h3>
+                                <p className="text-gray-400 mb-6">
                                     Live interactive classes, conceptual videos, and personalised learning journeys for every student.
-                                    <span className="block mt-3 text-purple-600 font-semibold">
+                                    <span className="block mt-3 text-purple-400 font-semibold">
                                         You will be redirected to our trusted platform for live classes.
                                     </span>
                                 </p>
@@ -504,21 +506,26 @@ const LandingPage: React.FC = () => {
                                     href="https://www.eduwallah.work.gd/register"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="inline-block w-full text-center py-3 rounded-lg border-2 border-purple-600 text-purple-600 font-bold hover:bg-purple-600 hover:text-white transition"
+                                    className="inline-block w-full text-center py-3 rounded-lg border-2 border-purple-500 text-purple-400 font-bold hover:bg-purple-600 hover:text-white transition"
                                 >
                                     Register Online
                                 </a>
                             </div>
 
                             {/* Offline Info Card */}
-                            <div className="p-8 rounded-2xl border border-gray-100 shadow-xl bg-white hover:shadow-2xl transition">
+                            <div className="p-8 rounded-2xl border border-gray-800 shadow-xl bg-gray-800 hover:shadow-2xl transition">
                                 <div className="flex items-start justify-between mb-6">
-                                    <div className="bg-orange-100 p-3 rounded-xl text-orange-600">
+                                    <div className="bg-orange-900/40 p-3 rounded-xl text-orange-400">
                                         <User size={32} />
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-gray-900">Classroom Learning</h3>
-                                <p className="text-gray-600 mb-6">Experience the magic of in-person learning with India's top teachers at a centre near you.</p>
+                                <h3 className="text-2xl font-bold mb-3 text-white">Classroom Learning</h3>
+                                <p className="text-gray-400 mb-6">
+                                    Experience the magic of in-person learning with India's top teachers at a centre near you.
+                                    <span className="block mt-3 text-orange-400 font-semibold">
+                                        Join our classroom programs for a comprehensive learning experience.
+                                    </span>
+                                </p>
                                 <button
                                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                                     className="inline-block w-full text-center py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold shadow-lg transform hover:scale-105 transition-all duration-300"
@@ -532,23 +539,23 @@ const LandingPage: React.FC = () => {
 
 
                 {/* Section: Our Learning Programs (Carousel) */}
-                <div className="py-16 bg-gray-50">
+                <div className="py-16 bg-gray-900">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-bold text-gray-900">Our Learning Programs</h2>
-                            <p className="text-gray-500 mt-2">Explore programs designed for every grade</p>
+                            <h2 className="text-3xl font-bold text-white">Our Learning Programs</h2>
+                            <p className="text-gray-400 mt-2">Explore programs designed for every grade</p>
                         </div>
 
                         {/* Horizontal Scrollable Program Cards */}
                         <div className="relative mb-8">
                             <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
                                 {/* Program Card 1 */}
-                                <div className="min-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start">
+                                <div className="min-w-[280px] bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start border border-gray-700">
                                     <div className="relative">
-                                        <div className="bg-gradient-to-br from-pink-100 to-pink-200 rounded-t-2xl p-6 h-48 flex items-center justify-center">
+                                        <div className="bg-gradient-to-br from-pink-900/40 to-pink-800/40 rounded-t-2xl p-6 h-48 flex items-center justify-center">
                                             <div className="text-center">
                                                 <div className="text-6xl mb-2">📚</div>
-                                                <p className="text-sm font-semibold text-pink-700">An Active Learning Adventure</p>
+                                                <p className="text-sm font-semibold text-pink-400">An Active Learning Adventure</p>
                                             </div>
                                         </div>
                                         <div className="absolute top-4 right-4 bg-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -556,18 +563,17 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-gray-900 mb-2">EduTalks Early Learn Program</h3>
-                                        <a href="#" className="text-purple-600 font-semibold text-sm hover:underline">Read more →</a>
+                                        <h3 className="font-bold text-white mb-2">EduTalks Early Learn Program</h3>
                                     </div>
                                 </div>
 
                                 {/* Program Card 2 */}
-                                <div className="min-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start">
+                                <div className="min-w-[280px] bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start border border-gray-700">
                                     <div className="relative">
-                                        <div className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-t-2xl p-6 h-48 flex items-center justify-center">
+                                        <div className="bg-gradient-to-br from-purple-900/40 to-purple-800/40 rounded-t-2xl p-6 h-48 flex items-center justify-center">
                                             <div className="text-center">
                                                 <div className="text-6xl mb-2">📱</div>
-                                                <p className="text-sm font-semibold text-purple-700">Self-Study Pack</p>
+                                                <p className="text-sm font-semibold text-purple-400">Self-Study Pack</p>
                                             </div>
                                         </div>
                                         <div className="absolute top-4 right-4 bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -575,18 +581,17 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-gray-900 mb-2">EduTalks The Learning App</h3>
-                                        <a href="#" className="text-purple-600 font-semibold text-sm hover:underline">Read more →</a>
+                                        <h3 className="font-bold text-white mb-2">EduTalks The Learning App</h3>
                                     </div>
                                 </div>
 
                                 {/* Program Card 3 */}
-                                <div className="min-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start">
+                                <div className="min-w-[280px] bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start border border-gray-700">
                                     <div className="relative">
-                                        <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-t-2xl p-6 h-48 flex items-center justify-center">
+                                        <div className="bg-gradient-to-br from-blue-900/40 to-blue-800/40 rounded-t-2xl p-6 h-48 flex items-center justify-center">
                                             <div className="text-center">
                                                 <div className="text-6xl mb-2">🎥</div>
-                                                <p className="text-sm font-semibold text-blue-700">EduTalks :LIVE Classes</p>
+                                                <p className="text-sm font-semibold text-blue-400">EduTalks :LIVE Classes</p>
                                             </div>
                                         </div>
                                         <div className="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -594,18 +599,17 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-gray-900 mb-2">EduTalks Live Classes</h3>
-                                        <a href="#" className="text-purple-600 font-semibold text-sm hover:underline">Read more →</a>
+                                        <h3 className="font-bold text-white mb-2">EduTalks Live Classes</h3>
                                     </div>
                                 </div>
 
                                 {/* Program Card 4 */}
-                                <div className="min-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start">
+                                <div className="min-w-[280px] bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start border border-gray-700">
                                     <div className="relative">
-                                        <div className="bg-gradient-to-br from-cyan-100 to-cyan-200 rounded-t-2xl p-6 h-48 flex items-center justify-center">
+                                        <div className="bg-gradient-to-br from-cyan-900/40 to-cyan-800/40 rounded-t-2xl p-6 h-48 flex items-center justify-center">
                                             <div className="text-center">
                                                 <div className="text-6xl mb-2">🎓</div>
-                                                <p className="text-sm font-semibold text-cyan-700">Foundation Course</p>
+                                                <p className="text-sm font-semibold text-cyan-400">Foundation Course</p>
                                             </div>
                                         </div>
                                         <div className="absolute top-4 right-4 bg-cyan-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -613,18 +617,17 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-gray-900 mb-2">EduTalks Foundation Program</h3>
-                                        <a href="#" className="text-purple-600 font-semibold text-sm hover:underline">Read more →</a>
+                                        <h3 className="font-bold text-white mb-2">EduTalks Foundation Program</h3>
                                     </div>
                                 </div>
 
                                 {/* Program Card 5 */}
-                                <div className="min-w-[280px] bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start">
+                                <div className="min-w-[280px] bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all flex-shrink-0 snap-start border border-gray-700">
                                     <div className="relative">
-                                        <div className="bg-gradient-to-br from-orange-100 to-orange-200 rounded-t-2xl p-6 h-48 flex items-center justify-center">
+                                        <div className="bg-gradient-to-br from-orange-900/40 to-orange-800/40 rounded-t-2xl p-6 h-48 flex items-center justify-center">
                                             <div className="text-center">
                                                 <div className="text-6xl mb-2">🏆</div>
-                                                <p className="text-sm font-semibold text-orange-700">Aakash Advantage</p>
+                                                <p className="text-sm font-semibold text-orange-400">EduTalks Advantage</p>
                                             </div>
                                         </div>
                                         <div className="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-full">
@@ -632,8 +635,7 @@ const LandingPage: React.FC = () => {
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="font-bold text-gray-900 mb-2">EduTalks JEE/NEET Prep</h3>
-                                        <a href="#" className="text-purple-600 font-semibold text-sm hover:underline">Read more →</a>
+                                        <h3 className="font-bold text-white mb-2">EduTalks JEE/NEET Prep</h3>
                                     </div>
                                 </div>
                             </div>
