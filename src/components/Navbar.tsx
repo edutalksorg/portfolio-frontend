@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import { Menu, X } from 'lucide-react';
@@ -11,6 +11,20 @@ const Navbar: React.FC = () => {
     // const { theme } = useTheme(); // theme is no longer needed since navbar is always white
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
 
 
@@ -28,7 +42,10 @@ const Navbar: React.FC = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className={`absolute top-0 left-0 w-full z-50 py-0 transition-colors duration-300 ${location.pathname === '/' ? 'bg-transparent' : 'bg-[#0F0F23] shadow-md'}`}
+            className={`fixed top-0 left-0 w-full z-50 py-0 transition-colors duration-300 ${location.pathname === '/'
+                ? isScrolled ? 'bg-white/10 backdrop-blur-md border-b border-white/10 shadow-sm' : 'bg-transparent'
+                : 'bg-[#0F0F23] shadow-md'
+                }`}
         >
             <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
                 {/* Logo */}

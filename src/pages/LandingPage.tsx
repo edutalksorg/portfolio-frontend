@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, ChevronDown, Globe, User } from 'lucide-react';
 import StudentImage from '../assets/image (2).png';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const LandingPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -99,26 +100,28 @@ const LandingPage: React.FC = () => {
                     </div>
 
                     <div className="container mx-auto px-4 pt-12 pb-12 lg:pt-20 lg:pb-2 relative z-10">
-                        <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="grid lg:grid-cols-2 gap-12 items-start">
 
                             {/* Left Content */}
                             {/* Left Content - Interactive Visuals */}
-                            <div className="relative h-[650px] w-full hidden lg:block">
+                            <div className="relative h-[600px] w-full hidden lg:block">
                                 {/* Student Image with Mask for Seamless Blending */}
                                 <motion.div
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.5 }}
-                                    className="absolute bottom-0 left-1/2 transform -translate-x-1/2 z-10 w-full flex justify-center items-end"
+                                    className="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 w-full flex justify-center items-start"
                                     style={{
-                                        maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
-                                        WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
+                                        maskImage: 'linear-gradient(to bottom, black 50%, transparent 95%), radial-gradient(circle at center, black 40%, transparent 80%)',
+                                        WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 95%), radial-gradient(circle at center, black 40%, transparent 80%)',
+                                        maskComposite: 'intersect',
+                                        WebkitMaskComposite: 'source-in'
                                     }}
                                 >
                                     <img
                                         src={StudentImage}
                                         alt="Student Learning"
-                                        className="h-[600px] w-auto object-contain filter contrast-125 saturate-110 brightness-105"
+                                        className="h-[700px] w-auto object-contain filter contrast-125 saturate-110 brightness-105"
                                     />
                                 </motion.div>
 
@@ -128,7 +131,7 @@ const LandingPage: React.FC = () => {
                                 <motion.div
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                                    className="absolute top-24 left-10 px-6 py-3 bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl shadow-xl z-20 flex items-center gap-3"
+                                    className="absolute top-10 left-10 px-6 py-3 bg-white/30 backdrop-blur-md border border-white/50 rounded-2xl shadow-xl z-20 flex items-center gap-3"
                                 >
                                     <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse" />
                                     <span className="font-semibold text-gray-800">Live Classes</span>
@@ -708,41 +711,7 @@ const LandingPage: React.FC = () => {
 
             </main>
 
-            <footer className="bg-gray-900 text-white py-12">
-                <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8 text-sm opacity-80">
-                    <div>
-                        <h5 className="font-bold text-white mb-4">EduTalks</h5>
-                        <p>Making learning accessible and effective for everyone.</p>
-                    </div>
-                    <div>
-                        <h5 className="font-bold text-white mb-4">Courses</h5>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:underline">CBSE</a></li>
-                            <li><a href="#" className="hover:underline">ICSE</a></li>
-                            <li><a href="#" className="hover:underline">JEE / NEET</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 className="font-bold text-white mb-4">Company</h5>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="hover:underline">About Us</a></li>
-                            <li><a href="#" className="hover:underline">Careers</a></li>
-                            <li><a href="#" className="hover:underline">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 className="font-bold text-white mb-4">Connect</h5>
-                        <div className="flex gap-4">
-                            <div className="w-8 h-8 bg-gray-700 rounded-full"></div>
-                            <div className="w-8 h-8 bg-gray-700 rounded-full"></div>
-                            <div className="w-8 h-8 bg-gray-700 rounded-full"></div>
-                        </div>
-                    </div>
-                </div>
-                <div className="text-center text-xs text-gray-600 mt-12 pt-8 border-t border-gray-800">
-                    &copy; {new Date().getFullYear()} EduTalks. All rights reserved.
-                </div>
-            </footer>
+            <Footer />
             {/* <Chatbot /> */}
         </div>
     );
