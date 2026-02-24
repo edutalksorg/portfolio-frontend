@@ -5,6 +5,7 @@ import { FadeIn, SlideIn, StaggerContainer, StaggerItem, CountUp, Floating } fro
 import { FloatingOrbs } from '../components/animations/ParticleField';
 import TeamMember from '../components/TeamMember';
 import type { TeamMemberData } from '../components/TeamMember';
+import { apiBaseUrl } from '../utils/api';
 
 const About: React.FC = () => {
     const [teamMembers, setTeamMembers] = useState<TeamMemberData[]>([]);
@@ -15,7 +16,7 @@ const About: React.FC = () => {
     useEffect(() => {
         const fetchTeam = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/team');
+                const response = await fetch(`${apiBaseUrl}api/team`);
                 const data = await response.json();
                 if (data.success && data.data.length > 0) {
                     // Map backend dynamic team to TeamMemberData interface

@@ -4,6 +4,7 @@ import { BookOpen, ChevronDown, Globe, User } from 'lucide-react';
 import StudentImage from '../assets/image (2).png';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { apiBaseUrl } from '../utils/api';
 
 const LandingPage: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -37,7 +38,7 @@ const LandingPage: React.FC = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch("http://localhost:5000/api/registrations", {
+            const response = await fetch(`${apiBaseUrl}api/registrations`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
